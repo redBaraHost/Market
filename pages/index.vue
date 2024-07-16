@@ -51,6 +51,22 @@
 
   <!-- slider recommander  -->
 
+  <div class="notif">
+
+    <p>Le savais-tu ?</p>
+    <h4>Vous pouvez refuser l'article a la livraison si elle n'est pas comme vous le pensiez.</h4>
+
+  </div>
+
+  <!-- slider telepone  -->
+
+  <br> <br>
+  <h2>Nos telephones.</h2>
+
+  <SliderVue />
+
+  <!-- slider telepone  -->
+
 
 
 
@@ -61,6 +77,7 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap');
 
 .top{
   display: flex;
@@ -76,6 +93,23 @@
 .top p{
   font-weight: 400;
 }
+
+.notif{
+  margin: 50px 0px 50px 0px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #EEE9E3;
+  height: 200px;
+}
+.notif p,h4{
+  text-align: center;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+
+}
+
 
 
 
