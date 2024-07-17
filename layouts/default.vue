@@ -9,7 +9,7 @@
         <v-spacer></v-spacer>
 
         <div class="d-flex left">
-          <v-icon>mdi-magnify</v-icon>
+          <v-icon @click="search">mdi-magnify</v-icon>
 
           <v-spacer></v-spacer>
 
@@ -25,6 +25,7 @@
     <br />
 
     <menu-vue />
+    <SearchVue />
 
     <Nuxt />
 
@@ -71,6 +72,7 @@
 
 <script>
 import menuVueVue from "../components/menuVue.vue";
+import SearchVue from "../components/searchVue.vue";
 
 export default {
   data() {
@@ -87,6 +89,15 @@ export default {
         box.style.display = "flex";
       });
     },
+
+    search(){
+
+      document.querySelector('.search').style.height="97%"
+
+        document.querySelector('.mdi-close-box-outline').style.display="block"
+
+        document.querySelector('.search').style.padding="20px"
+    }
   },
 };
 </script>

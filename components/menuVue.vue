@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div class="menu elevation-2">
 
     <v-icon @click="close">mdi-close</v-icon>
     <br>
