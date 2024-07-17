@@ -1,7 +1,11 @@
 <template>
     <div class="wrapper">
 
-        <br> <br> <br>
+        <br> 
+        
+        <span>Retour</span>
+        <br>
+        <br>
 
   <v-card
     class="mx-auto"

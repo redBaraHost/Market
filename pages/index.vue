@@ -63,9 +63,26 @@
   <br> <br>
   <h2>Nos telephones.</h2>
 
-  <SliderVue />
+  <SliderTelVue />
 
   <!-- slider telepone  -->
+
+  <br> <br>
+
+  <!-- affiche 4 -->
+
+   <Affiche4Vue />
+  <!-- affiche 4 -->
+
+  <br> <br> <br>
+
+  <h2>Nos ordinateurs.</h2>
+
+
+  <SliderTelVue />
+
+
+
 
 
 
@@ -123,6 +140,8 @@ import Affiche1Vue from '../components/affiche1Vue.vue';
 import Affiche2Vue from '../components/affiche2Vue.vue';
 import Affiche3Vue from '../components/affiche3Vue.vue';
 import SliderVue from '../components/sliderVue.vue';
+import SliderTelVue from '../components/sliderTelVue.vue';
+import Affiche4Vue from '../components/affiche4Vue.vue';
 
 export default {
   name: "IndexPage",

@@ -4,7 +4,7 @@
       <v-toolbar elevation="0">
         <v-app-bar-nav-icon @click="menuO"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>Market</v-toolbar-title>
+        <v-toolbar-title><nuxt-link to="/">Market</nuxt-link></v-toolbar-title>
 
         <v-spacer></v-spacer>
 
@@ -17,7 +17,7 @@
 
           <v-spacer></v-spacer>
 
-          <v-icon>mdi-account-circle</v-icon>
+          <nuxt-link to="/connexion"><v-icon>mdi-account-circle</v-icon></nuxt-link>
         </div>
       </v-toolbar>
     </div>
@@ -133,11 +133,12 @@ body {
   width: 100%;
 }
 
-.v-toolbar__title {
+.v-toolbar__title a {
   color: yellowgreen;
   font-family: "Rubik Glitch Pop", system-ui;
   font-weight: 900;
   font-style: normal;
+  text-decoration: none;
 }
 
 .left {
