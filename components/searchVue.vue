@@ -3,16 +3,17 @@
 
         <v-icon @click="close">mdi-close-box-outline</v-icon>
 
+        <br>
 
         <v-text-field
         :loading="loading"
-        prepend-icon="mdi-magnify"
+        prepend-inner-icon="mdi-magnify"
         density="compact"
         label="Recherche ...."
-        variant="solo"
+        outlined
         hide-details
         clearable
-        color="#00897B"
+        color="#5da44c"
         single-line
         @click:append-inner="onClick"
       ></v-text-field>
