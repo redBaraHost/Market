@@ -81,6 +81,19 @@
 
   <SliderTelVue />
 
+  <br> <br> <br>
+
+  <h2>Nos montres.</h2>
+
+
+  <SliderTelVue />
+
+  <br> <br> <br>
+
+  <!-- affiche 5 -->
+   <Affiche5Vue></Affiche5Vue>
+  <!-- affiche 5 -->
+
 
 
 
@@ -142,6 +155,7 @@ import Affiche3Vue from '../components/affiche3Vue.vue';
 import SliderVue from '../components/sliderVue.vue';
 import SliderTelVue from '../components/sliderTelVue.vue';
 import Affiche4Vue from '../components/affiche4Vue.vue';
+import Affiche5Vue from '../components/affiche5Vue.vue';
 
 export default {
   name: "IndexPage",
