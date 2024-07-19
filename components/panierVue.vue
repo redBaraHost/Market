@@ -1,4 +1,3 @@
-
 <template>
   <div class="panier">
     <v-app-bar class="elevation-0">
@@ -6,28 +5,16 @@
 
       <v-spacer></v-spacer>
 
-      <span class="text-h5 mr-3">Panier</span>
+      <span class="text-body-1 mr-3"
+        >Panier ({{ cartItemCount }} article)
+      </span>
 
-      <v-avatar color="primary" size="30" v-if="state == 'true'">
-        <span
-          style="
-            color: white !important;
-            font-weight: bolder;
-            font-size: 0.8rem;
-          "
-          >P</span
-        >
-      </v-avatar>
-
-      <nuxt-link to="/connexion">
-        <v-icon>mdi-account-circle</v-icon>
-      </nuxt-link>
       <v-spacer></v-spacer>
       <v-icon @click="closeCart">mdi-close</v-icon>
     </v-app-bar>
 
     <div class="center">
-      <div class="panier-vide">
+      <div v-if="cartItems.length === 0" class="panier-vide">
         <img src="/cart.png" width="150" />
         <br />
         <br />
@@ -38,12 +25,49 @@
 
         <br />
       </div>
+      <div style="width: 100%; padding: 20px; margin-top: 20px; margin-bottom: 150px; overflow: auto;" v-else>
+
+        <div class="card elavation-1" v-for="item in cartItems" :key="item.id">
+            <img :src="item.url" width="90" />
+
+            <div class="infos">
+                <span class="text-body-1">{{ item.name }}</span> <br>
+                <span class="text-body-2">{{ item.details }}</span> <br>
+                <span style="text-decoration: line-through;" class="text-body-2">{{ item.last_prix }} £</span> <br>
+
+                <span class="text-body-1 font-weight-bold">{{ item.prix }} £ x {{ item.quantity }}</span>
+            </div>
+
+            <v-spacer></v-spacer>
+
+            <v-icon @click="removeFromCart(item.id)">mdi-delete</v-icon>
+
+        
+
+        </div>
+
+        <div class="bottom elevation-3">
+            <div style="display: flex;">
+
+                <p class="font-weight-bold">Total estimé
+                </p>
+                <v-spacer></v-spacer>
+                <p class="total">779 £</p>
+            </div>
+
+            <v-btn block color="primary">Proceder au paiment</v-btn>
+
+        </div>
+
+
+       
+      </div>
     </div>
   </div>
 </template>
-
-<script>
-import { mapActions  } from 'vuex';
+  
+  <script>
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
@@ -51,14 +75,15 @@ export default {
       state: "",
     };
   },
-
-  
-  methods:{
-    ...mapActions(['closeCart']),
-
-  }
+  computed: {
+    ...mapGetters(["cartItems", "cartItemCount"]),
+  },
+  methods: {
+    ...mapActions(["closeCart", "removeFromCart"]),
+  },
 };
 </script>
+  
 
 <style scoped>
 .v-toolbar {
@@ -77,6 +102,7 @@ export default {
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  width: 100%;
   background-color: #f8f8f8;
 }
 
@@ -97,6 +123,27 @@ export default {
   height: 300px;
   padding: 30px;
 }
+
+.card{
+    display: flex;
+    width: 100% !important;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+
+}
+
+.bottom{
+    background-color: white;
+    padding: 20px;
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 </style>
 
 

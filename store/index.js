@@ -4,36 +4,75 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const store = () => new Vuex.Store({
-  state: {
-    isCartOpen: false
-  },
-  mutations: {
-    toggleCart(state) {
-      state.isCartOpen = !state.isCartOpen;
+    state: {
+        isCartOpen: false,
+        cart: []
     },
-    closeCart(state) {
-      state.isCartOpen = false;
+    mutations: {
+        toggleCart(state) {
+            state.isCartOpen = !state.isCartOpen;
+        },
+        closeCart(state) {
+            state.isCartOpen = false;
+        },
+        openCart(state) {
+            state.isCartOpen = true;
+        },
+        addToCart(state, product) {
+            const item = state.cart.find(item => item.id === product.id);
+            if (item) {
+                alert("Déjà ajouté au panier");
+            } else {
+                state.cart.push({ ...product, quantity: 1 });
+                localStorage.setItem('cart', JSON.stringify(state.cart));
+
+            }
+        },
+        loadCart(state) {
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            if (cart) {
+                state.cart = cart;
+            }
+        },
+        removeFromCart(state, productId) {
+            state.cart = state.cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(state.cart));
+
+        },
+       
     },
-    openCart(state) {
-      state.isCartOpen = true;
+    actions: {
+        toggleCart({ commit }) {
+            commit('toggleCart');
+        },
+        closeCart({ commit }) {
+            commit('closeCart');
+        },
+        openCart({ commit }) {
+            commit('openCart');
+        },
+        addToCart({ commit }, product) {
+            commit('addToCart', product);
+        },
+        loadCart({ commit }) {
+            commit('loadCart');
+        },
+        removeFromCart({ commit }, productId) {
+            commit('removeFromCart', productId);
+        },
+        
+    },
+    getters: {
+        isCartOpen(state) {
+            return state.isCartOpen;
+        },
+        cartItems(state) {
+            return state.cart;
+        },
+        cartItemCount(state) {
+            return state.cart.reduce((total, item) => total + item.quantity, 0);
+        }
     }
-  },
-  actions: {
-    toggleCart({ commit }) {
-      commit('toggleCart');
-    },
-    closeCart({ commit }) {
-      commit('closeCart');
-    },
-    openCart({ commit }) {
-      commit('openCart');
-    }
-  },
-  getters: {
-    isCartOpen(state) {
-      return state.isCartOpen;
-    }
-  }
 });
 
 export default store;

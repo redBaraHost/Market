@@ -75,6 +75,9 @@ export default {
       isCartOpen: 'isCartOpen',
     }),
   },
+  async mounted() {
+    await this.loadCart();
+  },
   methods: {
     menuO() {
       document.querySelector('.menu').style.width = '95%';
@@ -89,6 +92,8 @@ export default {
     ...mapActions({
       toggleCart: 'toggleCart',
     }),
+    ...mapActions(['loadCart']),
+
     search() {
       document.querySelector('.search').style.height = '97%';
       document.querySelector('.mdi-close-box-outline').style.display = 'block';
