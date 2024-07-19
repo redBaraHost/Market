@@ -1,34 +1,67 @@
 
 <template>
-  <div class="panier">
+  <div ref="panier" class="panier">
     <v-app-bar class="elevation-0">
       <nuxt-link to="/">Market</nuxt-link>
 
       <v-spacer></v-spacer>
 
-      <span class="text-h5">Panier</span>
+      <span class="text-h5 mr-3">Panier</span>
 
-      <v-spacer></v-spacer>
+      <v-avatar color="primary" size="30" v-if="state == 'true'">
+        <span
+          style="
+            color: white !important;
+            font-weight: bolder;
+            font-size: 0.8rem;
+          "
+          >P</span
+        >
+      </v-avatar>
 
       <nuxt-link to="/connexion">
         <v-icon>mdi-account-circle</v-icon>
       </nuxt-link>
+      <v-spacer></v-spacer>
+      <v-icon @click="close">mdi-close</v-icon>
     </v-app-bar>
 
     <div class="center">
       <div class="panier-vide">
+        <img src="/cart.png" width="150" />
+        <br />
+        <br />
         <p class="text-h4 text-center">Votre panier est vide</p>
         <br />
 
-        <v-btn outlined block>Voir boutique</v-btn>
+        <v-btn outlined block color="success">Voir boutique</v-btn>
+
+        <br />
       </div>
     </div>
-
-
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      state: "",
+    };
+  },
+  methods:{
+    close(){
+        // this.ref.panier.style.display='none',
+        document.querySelector('.panier').style.display='none'
+    }
+  }
+};
+</script>
+
 <style scoped>
+.v-toolbar {
+  background-color: white !important;
+}
 .panier {
   position: fixed;
   z-index: 25;
@@ -41,8 +74,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
+  background-color: #f8f8f8;
 }
 
 .panier a {
@@ -54,7 +87,14 @@
 }
 
 .panier .panier-vide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
   height: 300px;
   padding: 30px;
 }
 </style>
+
+
