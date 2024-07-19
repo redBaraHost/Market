@@ -1,38 +1,39 @@
-import { createStore as vuexCreateStore } from 'vuex';
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-export function createVuexStore() {
-  return vuexCreateStore({
-    state() {
-      return {
-        isCartOpen: false
-      };
+Vue.use(Vuex);
+
+const store = () => new Vuex.Store({
+  state: {
+    isCartOpen: false
+  },
+  mutations: {
+    toggleCart(state) {
+      state.isCartOpen = !state.isCartOpen;
     },
-    mutations: {
-      toggleCart(state) {
-        state.isCartOpen = !state.isCartOpen;
-      },
-      closeCart(state) {
-        state.isCartOpen = false;
-      },
-      openCart(state) {
-        state.isCartOpen = true;
-      }
+    closeCart(state) {
+      state.isCartOpen = false;
     },
-    actions: {
-      toggleCart({ commit }) {
-        commit('toggleCart');
-      },
-      closeCart({ commit }) {
-        commit('closeCart');
-      },
-      openCart({ commit }) {
-        commit('openCart');
-      }
-    },
-    getters: {
-      isCartOpen(state) {
-        return state.isCartOpen;
-      }
+    openCart(state) {
+      state.isCartOpen = true;
     }
-  });
-}
+  },
+  actions: {
+    toggleCart({ commit }) {
+      commit('toggleCart');
+    },
+    closeCart({ commit }) {
+      commit('closeCart');
+    },
+    openCart({ commit }) {
+      commit('openCart');
+    }
+  },
+  getters: {
+    isCartOpen(state) {
+      return state.isCartOpen;
+    }
+  }
+});
+
+export default store;

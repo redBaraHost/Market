@@ -1,6 +1,6 @@
 
 <template>
-  <div ref="panier" class="panier">
+  <div class="panier">
     <v-app-bar class="elevation-0">
       <nuxt-link to="/">Market</nuxt-link>
 
@@ -23,7 +23,7 @@
         <v-icon>mdi-account-circle</v-icon>
       </nuxt-link>
       <v-spacer></v-spacer>
-      <v-icon @click="close">mdi-close</v-icon>
+      <v-icon @click="closeCart">mdi-close</v-icon>
     </v-app-bar>
 
     <div class="center">
@@ -43,17 +43,19 @@
 </template>
 
 <script>
+import { mapActions  } from 'vuex';
+
 export default {
   data() {
     return {
       state: "",
     };
   },
+
+  
   methods:{
-    close(){
-        // this.ref.panier.style.display='none',
-        document.querySelector('.panier').style.display='none'
-    }
+    ...mapActions(['closeCart']),
+
   }
 };
 </script>

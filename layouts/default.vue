@@ -13,19 +13,24 @@
 
           <v-spacer></v-spacer>
 
-          <v-icon>mdi-cart</v-icon>
+          <v-icon @click="toggleCart">mdi-cart</v-icon>
 
           <v-spacer></v-spacer>
 
-            <v-avatar color="primary" size="30" v-if="state=='true'">
-              <span style="color: white !important; font-weight: bolder; font-size: 0.8rem;">P</span>
-            </v-avatar>
+          <v-avatar color="primary" size="30" v-if="state === 'true'">
+            <span
+              style="
+                color: white !important;
+                font-weight: bolder;
+                font-size: 0.8rem;
+              "
+              >P</span
+            >
+          </v-avatar>
 
           <nuxt-link to="/connexion">
-           <v-icon>mdi-account-circle</v-icon>
+            <v-icon>mdi-account-circle</v-icon>
           </nuxt-link>
-
-
         </div>
       </v-toolbar>
     </div>
@@ -34,7 +39,7 @@
 
     <menu-vue />
     <SearchVue />
-    <panierVue v-if="panier=='true'" />
+    <panierVue v-if="isCartOpen" />
 
     <Nuxt />
 
@@ -44,59 +49,60 @@
     <br />
     <br />
     <br />
-
-
   </v-app>
 </template>
 
-
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
-import menuVueVue from "../components/menuVue.vue";
-import PanierVue from "../components/panierVue.vue";
-import SearchVue from "../components/searchVue.vue";
+import menuVueVue from '../components/menuVue.vue';
+import PanierVue from '../components/panierVue.vue';
+import SearchVue from '../components/searchVue.vue';
 
 export default {
+  components: {
+    menuVueVue,
+    PanierVue,
+    SearchVue
+  },
   data() {
     return {
-      state:'false',
+      state: 'false',
     };
   },
   computed: {
-    ...mapState(['isCartOpen'])
+    ...mapGetters({
+      isCartOpen: 'isCartOpen',
+    }),
   },
   methods: {
     menuO() {
-      document.querySelector(".menu").style.width = "95%";
-      document.querySelector(".menu").style.padding = "20px";
-      document.querySelector(".mdi-close").style.display = "block";
+      document.querySelector('.menu').style.width = '95%';
+      document.querySelector('.menu').style.padding = '20px';
+      document.querySelector('.mdi-close').style.display = 'block';
 
-      const boxes = document.querySelectorAll(".box");
+      const boxes = document.querySelectorAll('.box');
       boxes.forEach((box) => {
-        box.style.display = "flex";
+        box.style.display = 'flex';
       });
     },
-
-    ...mapActions(['toggleCart', 'closeCart', 'openCart']),
-
+    ...mapActions({
+      toggleCart: 'toggleCart',
+    }),
     search() {
-      document.querySelector(".search").style.height = "97%";
-
-      document.querySelector(".mdi-close-box-outline").style.display = "block";
-
-      document.querySelector(".search").style.padding = "20px";
+      document.querySelector('.search').style.height = '97%';
+      document.querySelector('.mdi-close-box-outline').style.display = 'block';
+      document.querySelector('.search').style.padding = '20px';
     },
   },
 };
 </script>
 
 
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 
 * {
   margin: 0;
@@ -131,8 +137,6 @@ body {
 .left {
   width: 100px;
 }
-
-
 </style>
 
 
