@@ -21,11 +21,10 @@ const store = () => new Vuex.Store({
         addToCart(state, product) {
             const item = state.cart.find(item => item.id === product.id);
             if (item) {
-                alert("Déjà ajouté au panier");
+               return alert("Déjà ajouté au panier");
             } else {
-                state.cart.push({ ...product, quantity: 1 });
+                state.cart.push({ ...product, });
                 localStorage.setItem('cart', JSON.stringify(state.cart));
-
             }
         },
         loadCart(state) {
@@ -37,9 +36,9 @@ const store = () => new Vuex.Store({
         removeFromCart(state, productId) {
             state.cart = state.cart.filter(item => item.id !== productId);
             localStorage.setItem('cart', JSON.stringify(state.cart));
-
         },
        
+
     },
     actions: {
         toggleCart({ commit }) {
@@ -61,6 +60,7 @@ const store = () => new Vuex.Store({
             commit('removeFromCart', productId);
         },
         
+
     },
     getters: {
         isCartOpen(state) {

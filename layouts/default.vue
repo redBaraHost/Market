@@ -43,12 +43,14 @@
 
     <Nuxt />
 
+    
     <br />
     <br />
     <br />
     <br />
     <br />
     <br />
+    <footerVue />
   </v-app>
 </template>
 
@@ -58,6 +60,7 @@ import { mapActions, mapGetters } from 'vuex';
 import menuVueVue from '../components/menuVue.vue';
 import PanierVue from '../components/panierVue.vue';
 import SearchVue from '../components/searchVue.vue';
+import footerVue from '../components/footerVue.vue';
 
 export default {
   components: {

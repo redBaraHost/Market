@@ -6,8 +6,8 @@
         </div>
         <div class="info-box">
           <p><strong>{{ item.name }}</strong></p>
-          <p>A partir de <span>{{ item.prix }}</span> £</p>
           <span class="last-price">{{ item.last_prix }} £</span>
+          <p>A partir de <span>{{ item.prix }}</span> £</p>
         </div>
         <br><br>
         
@@ -35,7 +35,7 @@
             id:1,
             name: 'Pixel 8 pro',
             details: 'couleur blue, 64GB, etc ..',
-            prix: '799',
+            prix: '700',
             last_prix: '1023',
             url: 'https://lh3.googleusercontent.com/E2J7hG3ZRWpFOO0NBrkg1s6K1ZKYLwEuCK_lAO7LrPVH3C0eTbFCycYgqs4gr8caAr27S-PKLy2yLhIVGCy4byZ5wZ8kzQpnyQk=rw-e365-w1200'
           },

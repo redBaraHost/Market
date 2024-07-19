@@ -79,14 +79,14 @@
   <h2>Nos ordinateurs.</h2>
 
 
-  <SliderTelVue />
+  <SliderPcVue />
 
   <br> <br> <br>
 
   <h2>Nos montres.</h2>
 
 
-  <SliderTelVue />
+  <SliderMontreVue />
 
   <br> <br> <br>
 
