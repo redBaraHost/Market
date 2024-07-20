@@ -12,7 +12,7 @@
       <div v-if="cartItems.length === 0" class="panier-vide">
         <img src="/cart.png" width="150" />
         <p class="text-h4 text-center">Votre panier est vide</p>
-        <v-btn outlined block color="#10a37f">Voir boutique</v-btn>
+        <v-btn outlined block color="teal" @click="menuO">Voir boutique</v-btn>
       </div>
       <div
         style="
@@ -94,7 +94,17 @@ export default {
 
       // Mettre à jour localStorage avec la nouvelle valeur de cartItems
       localStorage.setItem('cart', JSON.stringify(this.cartItems));
-    }
+    },
+    menuO() {
+      document.querySelector('.menu').style.width = '95%';
+      document.querySelector('.menu').style.padding = '20px';
+      document.querySelector('.mdi-close').style.display = 'block';
+
+      const boxes = document.querySelectorAll('.box');
+      boxes.forEach((box) => {
+        box.style.display = 'flex';
+      });
+    },
   
 
    
@@ -111,7 +121,7 @@ export default {
 }
 .panier {
   position: fixed;
-  z-index: 25;
+  z-index: 20;
   height: 100vh;
   width: 100%;
   background-color: white;

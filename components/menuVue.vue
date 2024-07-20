@@ -106,7 +106,7 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  z-index: 20;
+  z-index: 25;
   left: 0%;
   top: 55px;
   width: 0%;
