@@ -58,9 +58,12 @@
 </template>
 
 <style scoped>
+
 footer {
   padding: 20px;
-  background-color: #e2e2e2;
+  background-color: white;
+  color: gray;
+
 }
 
 .reseau {
@@ -70,4 +73,14 @@ footer {
 .reseau svg {
   width: 25px;
 }
+
+.v-toolbar__title {
+  color: #5da44c;
+  font-family: "Fugaz One", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: none;
+}
+
+
 </style>

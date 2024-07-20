@@ -13,7 +13,7 @@
         outlined
         hide-details
         clearable
-        color="#5da44c"
+        color="teal"
         single-line
         @click:append-inner="onClick"
       ></v-text-field>

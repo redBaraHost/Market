@@ -4,7 +4,7 @@
     <v-icon @click="close">mdi-close</v-icon>
     <br>
 
-    <v-btn @click="telephone" large confortable text class="box pa-5">
+    <v-btn @click="telephones" large confortable text class="box pa-5">
       <img
         src="https://lh3.googleusercontent.com/jqf4IU7510s8OYtkVCjBaVjku1DsruhZtn9LGla7PMbmflRr4B9Mls2pskmfMLoUicTTcdTlaAa-wD6BbNbveAbzxpHN6I1h7A"
         width="50"
@@ -15,7 +15,7 @@
       <v-spacer></v-spacer>
       
     </v-btn>
-        <v-btn large confortable text class="box pa-5">
+        <v-btn @click="ecouteurs" large confortable text class="box pa-5">
 
       <img
         src="https://lh3.googleusercontent.com/gb1-ZHkdOS6IO9LnFMV7liSbgbt0D5Y2c9z626Ds7phkHx0a08xrHHFiDnmY1IlGs4tj9qh0VQmPdu3REi3An2JuoJcn_sCgNfs"
@@ -26,7 +26,7 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
     </v-btn>
-        <v-btn large confortable text class="box pa-5">
+        <v-btn @click="montres" large confortable text class="box pa-5">
 
       <img
         src="/article/montre.webp"
@@ -37,7 +37,7 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
     </v-btn>
-        <v-btn large confortable text class="box pa-5">
+        <v-btn @click="tools" large confortable text class="box pa-5">
 
       <img
         src="https://lh3.googleusercontent.com/gDXehJ9Qf611YfA4gj_GTEmdbxKlKq8uCWqp8spYkFiNQNdE1DKHoq8G3UAAll_1HpZ0DiiLn-jMKy6ea44vy-NGCzKd3U5zUIA"
@@ -49,13 +49,25 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
     </v-btn>
-        <v-btn large confortable text class="box pa-5">
+        <v-btn @click="tablettes" large confortable text class="box pa-5">
 
       <img
         src="https://lh3.googleusercontent.com/YN24eOCoidong7T3E1foOb7nn6irWVnKprK7TdXKooClNrLKih6GLszuAurv36z4glpTLsWZOwFYFqRtIS4flbacfA3boUMvGY8=rw-e365-nu-w601"
         width="50"
       />
       <span>Tablettes</span>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+    </v-btn>
+
+        <v-btn @click="pc" large confortable text class="box pa-5">
+
+      <img
+        src="https://lh3.googleusercontent.com/YN24eOCoidong7T3E1foOb7nn6irWVnKprK7TdXKooClNrLKih6GLszuAurv36z4glpTLsWZOwFYFqRtIS4flbacfA3boUMvGY8=rw-e365-nu-w601"
+        width="50"
+      />
+      <span>Ordinateurs</span>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
@@ -126,6 +138,8 @@
 </style>
 
 <script>
+import { tablettes } from '../utils/data';
+
 
 export default ({
     data() {
@@ -145,9 +159,34 @@ export default ({
         box.style.display = "none";
       });
     },
-    telephone(){
+    telephones(){
 
       this.$router.push('/telephones')
+      this.close()
+    },
+    montres(){
+
+      this.$router.push('/montres')
+      this.close()
+    },
+    tablettes(){
+
+      this.$router.push('/tablettes')
+      this.close()
+    },
+    tools(){
+
+      this.$router.push('/accessoires')
+      this.close()
+    },
+    pc(){
+
+      this.$router.push('/pc')
+      this.close()
+    },
+    ecouteurs(){
+
+      this.$router.push('/ecouteurs')
       this.close()
     }
   },
