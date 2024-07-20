@@ -4,7 +4,7 @@
     <v-icon @click="close">mdi-close</v-icon>
     <br>
 
-    <v-btn large confortable text class="box pa-5">
+    <v-btn @click="telephone" large confortable text class="box pa-5">
       <img
         src="https://lh3.googleusercontent.com/jqf4IU7510s8OYtkVCjBaVjku1DsruhZtn9LGla7PMbmflRr4B9Mls2pskmfMLoUicTTcdTlaAa-wD6BbNbveAbzxpHN6I1h7A"
         width="50"
@@ -145,6 +145,11 @@ export default ({
         box.style.display = "none";
       });
     },
+    telephone(){
+
+      this.$router.push('/telephones')
+      this.close()
+    }
   },
 })
 </script>
