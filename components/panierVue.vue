@@ -50,7 +50,7 @@
             <v-spacer></v-spacer>
             <v-spacer></v-spacer>
 
-            <select v-model="item.quantity">
+            <select @change="changeQuantity(item)" v-model="item.quantity">
               <option v-for="n in 10" :value="n" :key="n">{{ n }}</option>
             </select>
           </div>
@@ -85,6 +85,16 @@ export default {
         0
       );
     },
+    changeQuantity(item) {
+      // Trouver l'index de l'article dans cartItems
+      const index = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
+
+      // Mettre à jour la quantité de l'article dans cartItems
+      this.cartItems[index].quantity = item.quantity;
+
+      // Mettre à jour localStorage avec la nouvelle valeur de cartItems
+      localStorage.setItem('cart', JSON.stringify(this.cartItems));
+    }
   
 
    
