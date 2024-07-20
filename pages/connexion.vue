@@ -15,7 +15,7 @@
           <v-form ref="form">
             <v-text-field
               v-model="first"
-              color="#5da44c"
+              color="#10a37f"
               label="Nom"
               variant="underlined"
               v-if="etat !== 'co'"
@@ -24,7 +24,7 @@
   
             <v-text-field
               v-model="last"
-              color="#5da44c"
+              color="#10a37f"
               label="Prénom"
               variant="underlined"
               v-if="etat !== 'co'"
@@ -32,7 +32,7 @@
   
             <v-text-field
               v-model="email"
-              color="#5da44c"
+              color="#10a37f"
               label="Email"
               type="email"
               variant="underlined"
@@ -41,7 +41,7 @@
   
             <v-text-field
               v-model="password"
-              color="#5da44c"
+              color="#10a37f"
               label="Mot de passe"
               type="password"
               variant="underlined"
@@ -49,7 +49,7 @@
   
             <v-checkbox
               v-model="terms"
-              color="#5da44c"
+              color="#10a37f"
               label="J'accepte les conditions"
               v-if="etat !== 'co'"
             ></v-checkbox>
@@ -61,12 +61,12 @@
         <v-card-actions>
           <v-spacer></v-spacer>
   
-          <v-btn tonal comfortable block large color="#5da44c" v-if="etat !== 'co'">
+          <v-btn tonal comfortable block large color="#10a37f" v-if="etat !== 'co'">
             <span style="color: white;">S'inscrire</span> 
             <v-icon icon="mdi-chevron-right" end></v-icon>
           </v-btn>
           
-          <v-btn style="color: white;" tonal comfortable block large color="#5da44c" v-else>
+          <v-btn style="color: white;" tonal comfortable block large color="#10a37f" v-else>
             Se connecter
             <v-icon icon="mdi-chevron-right" end></v-icon>
           </v-btn>
@@ -112,3 +112,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+body{
+
+  font-family: 'Google Sans', sans-serif !important;
+
+}
+h1{
+  font-family: 'Google Sans', sans-serif !important;
+
+}
+</style>

@@ -12,7 +12,7 @@
       <div v-if="cartItems.length === 0" class="panier-vide">
         <img src="/cart.png" width="150" />
         <p class="text-h4 text-center">Votre panier est vide</p>
-        <v-btn outlined block color="success">Voir boutique</v-btn>
+        <v-btn outlined block color="#10a37f">Voir boutique</v-btn>
       </div>
       <div
         style="
