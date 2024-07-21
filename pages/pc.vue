@@ -35,7 +35,7 @@
         <br />
         <br />
         <v-card-actions>
-          <v-btn color="primary">Ajouter</v-btn>
+          <v-btn color="primary" @click="addToCart(item)">Ajouter</v-btn>
         </v-card-actions>
       </v-card>
   
@@ -52,6 +52,8 @@
   
   <script>
   import { pc } from '../utils/data';
+  import { mapActions } from 'vuex';
+
   
   export default ({
       data() {
@@ -60,6 +62,12 @@
           }
           
       },
+      methods: {
+    ...mapActions(['addToCart']),
+    addItemToCart(item) {
+      this.addToCart(item);
+    }
+  },
   })
   </script>
   
