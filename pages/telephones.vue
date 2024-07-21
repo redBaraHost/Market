@@ -1,6 +1,10 @@
 <template>
   <div class="wrapper">
-    <br />
+    <v-icon  @click="retour">mdi-arrow-left</v-icon>
+
+    <br>
+      <br>
+      <br>
 
     <h1 class="text-h5 text-center font-weight-bold">
       Google pexels. Le telephones concu 100% par google.
@@ -66,7 +70,10 @@ export default ({
     ...mapActions(['addToCart']),
     addItemToCart(item) {
       this.addToCart(item);
-    }
+    },
+    retour() {
+      window.history.back();
+    },
   },
 })
 </script>

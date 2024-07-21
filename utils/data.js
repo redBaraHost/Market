@@ -16,6 +16,7 @@ export const recommander= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '149',
     last_prix: '229',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601'
   },
   {
@@ -24,6 +25,7 @@ export const recommander= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '499',
     last_prix: '549',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/4mBe7W_xXYt4JNMQHR0wIX7n4Vv6VPxw3MRJWLCiUJAPCoHz5r7oHEKu4wr_KszIouzwCnk7XabMRJ135ae1niTXr6AT0_gRpzE=s1400-w1400-e365-rw-v1'
   },
   {
@@ -32,6 +34,7 @@ export const recommander= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '119,95',
     last_prix: '159,95',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/1irhYbVhHpMUXbVuRtM2erpOC4BMFhZuplK63D_K6wrUR5Zep6EcbHW-VN81QJV3RwvmHiQRS3FuHOXuTDfiCo0oISYPle-CDjXo=rw-e365-w1200'
   },
   {
@@ -40,6 +43,7 @@ export const recommander= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',
+    quantity: 1,
     url: '/article/montre.webp'
   },
   // Ajoutez d'autres produits ici si nécessaire
@@ -61,6 +65,7 @@ export const telephones= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '149',
     last_prix: '229',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601'
   },
   {
@@ -69,6 +74,7 @@ export const telephones= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '119,95',
     last_prix: '159,95',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/1irhYbVhHpMUXbVuRtM2erpOC4BMFhZuplK63D_K6wrUR5Zep6EcbHW-VN81QJV3RwvmHiQRS3FuHOXuTDfiCo0oISYPle-CDjXo=rw-e365-w1200'
   },
   {
@@ -77,6 +83,7 @@ export const telephones= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',
+    quantity: 1,
     url: '/article/montre.webp'
   },
   // Ajoutez d'autres produits ici si nécessaire
@@ -97,6 +104,7 @@ export const pc= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '149',
     last_prix: '229',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601'
   },
   {
@@ -105,6 +113,7 @@ export const pc= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '499',
     last_prix: '549',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/4mBe7W_xXYt4JNMQHR0wIX7n4Vv6VPxw3MRJWLCiUJAPCoHz5r7oHEKu4wr_KszIouzwCnk7XabMRJ135ae1niTXr6AT0_gRpzE=s1400-w1400-e365-rw-v1'
   },
   {
@@ -113,6 +122,7 @@ export const pc= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '119,95',
     last_prix: '159,95',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/1irhYbVhHpMUXbVuRtM2erpOC4BMFhZuplK63D_K6wrUR5Zep6EcbHW-VN81QJV3RwvmHiQRS3FuHOXuTDfiCo0oISYPle-CDjXo=rw-e365-w1200'
   },
   {
@@ -121,6 +131,7 @@ export const pc= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',
+    quantity: 1,
     url: '/article/montre.webp'
   },
   // Ajoutez d'autres produits ici si nécessaire
@@ -141,6 +152,7 @@ export const tablettes= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '149',
     last_prix: '229',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601'
   },
   {
@@ -149,6 +161,7 @@ export const tablettes= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '499',
     last_prix: '549',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/4mBe7W_xXYt4JNMQHR0wIX7n4Vv6VPxw3MRJWLCiUJAPCoHz5r7oHEKu4wr_KszIouzwCnk7XabMRJ135ae1niTXr6AT0_gRpzE=s1400-w1400-e365-rw-v1'
   },
   {
@@ -157,6 +170,7 @@ export const tablettes= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '119,95',
     last_prix: '159,95',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/1irhYbVhHpMUXbVuRtM2erpOC4BMFhZuplK63D_K6wrUR5Zep6EcbHW-VN81QJV3RwvmHiQRS3FuHOXuTDfiCo0oISYPle-CDjXo=rw-e365-w1200'
   },
   {
@@ -165,6 +179,7 @@ export const tablettes= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',
+    quantity: 1,
     url: '/article/montre.webp'
   },
   // Ajoutez d'autres produits ici si nécessaire
@@ -185,6 +200,7 @@ export const accessoires= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '149',
     last_prix: '229',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601'
   },
   {
@@ -193,10 +209,12 @@ export const accessoires= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '499',
     last_prix: '549',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/4mBe7W_xXYt4JNMQHR0wIX7n4Vv6VPxw3MRJWLCiUJAPCoHz5r7oHEKu4wr_KszIouzwCnk7XabMRJ135ae1niTXr6AT0_gRpzE=s1400-w1400-e365-rw-v1'
   },
   {
     id: uuidv4(),
+    quantity: 1,
     name: 'Fitbit Charge 6',
     details: 'couleur blue, 64GB, etc ..',
     prix: '119,95',
@@ -209,6 +227,7 @@ export const accessoires= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',
+    quantity: 1,
     url: '/article/montre.webp'
   },
   // Ajoutez d'autres produits ici si nécessaire
@@ -229,6 +248,7 @@ export const montres= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '149',
     last_prix: '229',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601'
   },
   {
@@ -245,6 +265,7 @@ export const montres= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '119,95',
     last_prix: '159,95',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/1irhYbVhHpMUXbVuRtM2erpOC4BMFhZuplK63D_K6wrUR5Zep6EcbHW-VN81QJV3RwvmHiQRS3FuHOXuTDfiCo0oISYPle-CDjXo=rw-e365-w1200'
   },
   {
@@ -253,6 +274,7 @@ export const montres= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',
+    quantity: 1,
     url: '/article/montre.webp'
   },
   // Ajoutez d'autres produits ici si nécessaire
@@ -273,6 +295,7 @@ export const ecouteurs= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '149',
     last_prix: '229',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601'
   },
   {
@@ -281,6 +304,7 @@ export const ecouteurs= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '499',
     last_prix: '549',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/4mBe7W_xXYt4JNMQHR0wIX7n4Vv6VPxw3MRJWLCiUJAPCoHz5r7oHEKu4wr_KszIouzwCnk7XabMRJ135ae1niTXr6AT0_gRpzE=s1400-w1400-e365-rw-v1'
   },
   {
@@ -289,6 +313,7 @@ export const ecouteurs= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '119,95',
     last_prix: '159,95',
+    quantity: 1,
     url: 'https://lh3.googleusercontent.com/1irhYbVhHpMUXbVuRtM2erpOC4BMFhZuplK63D_K6wrUR5Zep6EcbHW-VN81QJV3RwvmHiQRS3FuHOXuTDfiCo0oISYPle-CDjXo=rw-e365-w1200'
   },
   {
@@ -297,6 +322,7 @@ export const ecouteurs= [
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',
+    quantity: 1,
     url: '/article/montre.webp'
   },
   // Ajoutez d'autres produits ici si nécessaire
