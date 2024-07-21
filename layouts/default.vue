@@ -13,7 +13,7 @@
 
           <v-spacer></v-spacer>
 
-          <v-badge color="info" :content="cartItemCount" >
+          <v-badge v-if="cartItemCount > 0" color="info" :content="cartItemCount" >
             <v-icon @click="toggleCart">mdi-cart</v-icon>
           </v-badge>
 

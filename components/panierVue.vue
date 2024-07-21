@@ -134,6 +134,7 @@ export default {
   height: 100vh;
   width: 100%;
   background-color: #f8f8f8;
+  padding-bottom: 30px;
 }
 
 .panier a {
