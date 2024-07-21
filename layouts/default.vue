@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div>
-      <v-toolbar elevation="0">
+      <v-toolbar class="p-5" elevation="0">
         <v-app-bar-nav-icon @click="menuO"></v-app-bar-nav-icon>
 
         <v-toolbar-title><nuxt-link to="/">Market</nuxt-link></v-toolbar-title>
@@ -13,7 +13,9 @@
 
           <v-spacer></v-spacer>
 
-          <v-icon @click="toggleCart">mdi-cart</v-icon>
+          <v-badge color="info" :content="cartItemCount" >
+            <v-icon @click="toggleCart">mdi-cart</v-icon>
+          </v-badge>
 
           <v-spacer></v-spacer>
 
@@ -43,7 +45,6 @@
 
     <Nuxt />
 
-    
     <br />
     <br />
     <br />
@@ -55,27 +56,28 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
-
-import menuVueVue from '../components/menuVue.vue';
-import PanierVue from '../components/panierVue.vue';
-import SearchVue from '../components/searchVue.vue';
-import footerVue from '../components/footerVue.vue';
+import { mapActions, mapGetters } from "vuex";
+import menuVueVue from "../components/menuVue.vue";
+import PanierVue from "../components/panierVue.vue";
+import SearchVue from "../components/searchVue.vue";
+import footerVue from "../components/footerVue.vue";
 
 export default {
   components: {
     menuVueVue,
     PanierVue,
-    SearchVue
+    SearchVue,
+    footerVue,
   },
   data() {
     return {
-      state: 'false',
+      state: "false",
     };
   },
   computed: {
     ...mapGetters({
-      isCartOpen: 'isCartOpen',
+      isCartOpen: "isCartOpen",
+      cartItemCount: "cartItemCount",
     }),
   },
   async mounted() {
@@ -83,44 +85,43 @@ export default {
   },
   methods: {
     menuO() {
-      document.querySelector('.menu').style.width = '95%';
-      document.querySelector('.menu').style.padding = '20px';
-      document.querySelector('.mdi-close').style.display = 'block';
+      document.querySelector(".menu").style.width = "95%";
+      document.querySelector(".menu").style.padding = "20px";
+      document.querySelector(".mdi-close").style.display = "block";
 
-      const boxes = document.querySelectorAll('.box');
+      const boxes = document.querySelectorAll(".box");
       boxes.forEach((box) => {
-        box.style.display = 'flex';
+        box.style.display = "flex";
       });
     },
     ...mapActions({
-      toggleCart: 'toggleCart',
+      toggleCart: "toggleCart",
     }),
-    ...mapActions(['loadCart']),
+    ...mapActions(["loadCart"]),
 
     search() {
-      document.querySelector('.search').style.height = '97%';
-      document.querySelector('.mdi-close-box-outline').style.display = 'block';
-      document.querySelector('.search').style.padding = '20px';
+      document.querySelector(".search").style.height = "97%";
+      document.querySelector(".mdi-close-box-outline").style.display = "block";
+      document.querySelector(".search").style.padding = "20px";
     },
   },
 };
 </script>
 
 
+
 <style scoped>
-
-
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Google Sans', sans-serif ;
+  font-family: "Google Sans", sans-serif;
 }
 
 body {
-  font-family: 'Google Sans', sans-serif !important;
+  font-family: "Google Sans", sans-serif !important;
   font-size: 14px;
   line-height: 1.29;
   margin-top: 75px;
