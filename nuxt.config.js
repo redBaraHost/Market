@@ -63,6 +63,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  buildDir: 'dist', // Optionnelle, définit le répertoire de build
+  buildDir: 'dist/.nuxt',  // Placer les fichiers de build dans un sous-dossier 'dist/.nuxt'
+
 
 }
