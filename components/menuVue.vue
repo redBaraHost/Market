@@ -140,6 +140,7 @@
 <script>
 import { tablettes } from '../utils/data';
 
+import { mapGetters, mapActions } from "vuex";
 
 export default ({
     data() {
@@ -160,35 +161,41 @@ export default ({
       });
     },
     telephones(){
-
       this.$router.push('/telephones')
       this.close()
+      this.closeCart()
+
     },
     montres(){
-
       this.$router.push('/montres')
       this.close()
+      this.closeCart()
+
     },
     tablettes(){
-
       this.$router.push('/tablettes')
       this.close()
+      this.closeCart()
+
     },
     tools(){
-
       this.$router.push('/accessoires')
       this.close()
+      this.closeCart()
+
     },
     pc(){
-
       this.$router.push('/pc')
       this.close()
+      this.closeCart()
     },
     ecouteurs(){
-
       this.$router.push('/ecouteurs')
       this.close()
-    }
+      this.closeCart()
+
+    },
+    ...mapActions(["closeCart"]),
   },
 })
 </script>

@@ -91,7 +91,7 @@ export const telephones= [
 export const pc= [
   {
     id: uuidv4(),
-    name: 'Pixel 8 pro',
+    name: 'PC 8 pro',
     details: 'couleur blue, 64GB, etc ..',
     prix: '799',
     last_prix: '1023',

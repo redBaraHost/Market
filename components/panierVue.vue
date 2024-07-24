@@ -3,7 +3,7 @@
     <v-app-bar class="elevation-0">
       <nuxt-link to="/">Market</nuxt-link>
       <v-spacer></v-spacer>
-      <span class="text-body-1 mr-3">Panier ({{ cartItemCount }} article)</span>
+      <span class="text-body-1 mr-3">Panier ({{ cartItemCount }} article<span v-show="cartItemCount > 1">s</span> )</span>
       <v-spacer></v-spacer>
       <v-icon @click="closeCart">mdi-close</v-icon>
     </v-app-bar>

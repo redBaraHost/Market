@@ -6,8 +6,8 @@
         </div>
         <div class="info-box">
           <p><strong>{{ item.name }}</strong></p>
-          <p>A partir de <span>{{ item.prix }}</span> £</p>
           <span class="last-price">{{ item.last_prix }} £</span>
+          <p>A partir de <span>{{ item.prix }}</span> £</p>
         </div>
         <br><br>
         

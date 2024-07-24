@@ -102,7 +102,7 @@ export default {
     search() {
       document.querySelector(".search").style.height = "97%";
       document.querySelector(".mdi-close-box-outline").style.display = "block";
-      document.querySelector(".search").style.padding = "20px";
+      document.querySelector(".search").style.padding = "0px 20px 20px 20px";
     },
   },
 };
