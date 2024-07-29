@@ -5,36 +5,36 @@
     <br />
     <div v-if="product">
       <p class="text-h5 font-weight-bold">{{ product.name }}</p>
-      <p class="text-body-1">A parti de {{ product.prix }} £</p>
+      <p class="text-body-1">À partir de {{ product.prix }} £</p>
 
       <div class="img-box">
-      <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
-        <v-img
-          v-if="img === 'true'"
-          :src="product.url"
-          height="auto"
-          key="img1"
-        ></v-img>
-      </transition>
+        <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+          <v-img
+            v-if="img === 'true'"
+            :src="product.url"
+            height="auto"
+            key="img1"
+          ></v-img>
+        </transition>
 
-      <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
-        <v-img
-          v-if="img_2 === 'true'"
-          :src="product.url2"
-          height="auto"
-          key="img2"
-        ></v-img>
-      </transition>
+        <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+          <v-img
+            v-if="img_2 === 'true'"
+            :src="product.url2"
+            height="auto"
+            key="img2"
+          ></v-img>
+        </transition>
 
-      <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
-        <v-img
-          v-if="img_3 === 'true'"
-          :src="product.url3"
-          height="auto"
-          key="img3"
-        ></v-img>
-      </transition>
-    </div>
+        <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+          <v-img
+            v-if="img_3 === 'true'"
+            :src="product.url3"
+            height="auto"
+            key="img3"
+          ></v-img>
+        </transition>
+      </div>
 
       <div class="img-bottom">
         <div @click="img1">
@@ -53,13 +53,13 @@
       <br />
       <br />
 
-      <v-btn large block color="primary">Ajouter au panier</v-btn>
+      <v-btn large block color="primary" @click="addToCartHandler">Ajouter au panier</v-btn>
 
       <br />
 
       <span>
         <v-icon color="success">mdi-shield-lock</v-icon>
-        paiment securiser
+        Paiement sécurisé
       </span>
       <br />
       <br />
@@ -71,9 +71,96 @@
       <br />
     </div>
 
-    <v-alert v-else type="error" dismissible> non trouver ! </v-alert>
+    <v-alert v-else type="error" dismissible>Produit non trouvé !</v-alert>
   </div>
 </template>
+
+<script>
+import { mapActions } from "vuex";
+import {
+  recommander,
+  telephones,
+  pc,
+  tablettes,
+  accessoires,
+  montres,
+  ecouteurs,
+} from "~/utils/data";
+
+export default {
+  async asyncData({ params }) {
+    try {
+      const productId = params.id;
+      // Recherche dans tous les tableaux de produits
+      const allProducts = [
+        ...recommander,
+        ...telephones,
+        ...pc,
+        ...tablettes,
+        ...accessoires,
+        ...montres,
+        ...ecouteurs,
+      ];
+      const product = allProducts.find((p) => p.id === productId);
+
+      return { product };
+    } catch (error) {
+      console.log("Produit non trouvé");
+      return { product: null };
+    }
+  },
+  data() {
+    return {
+      product: null,
+
+      img: "true",
+      img_2: "false",
+      img_3: "false",
+    };
+  },
+  methods: {
+    ...mapActions(["addToCart"]),
+    retour() {
+      window.history.back();
+    },
+    img1() {
+      this.img = "true";
+      this.img_2 = "false";
+      this.img_3 = "false";
+    },
+    img2() {
+      this.img = "false";
+      this.img_2 = "true";
+      this.img_3 = "false";
+    },
+    img3() {
+      this.img = "false";
+      this.img_2 = "false";
+      this.img_3 = "true";
+    },
+    addToCartHandler() {
+      if (this.product) {
+        this.addToCart(this.product);
+      }
+    },
+    beforeEnter(el) {
+      el.style.opacity = 0;
+    },
+    enter(el, done) {
+      el.offsetHeight; // trigger reflow
+      el.style.transition = 'opacity 0.5s ease-in-out';
+      el.style.opacity = 1;
+      done();
+    },
+    leave(el, done) {
+      el.style.transition = 'opacity 0.5s ease-in-out';
+      el.style.opacity = 0;
+      done();
+    }
+  },
+};
+</script>
+
 
 <style scoped>
 .wrapper {
@@ -136,89 +223,4 @@ svg {
   height: 24px;
 }
 </style>
-
-<script>
-import { mapActions, mapGetters } from "vuex";
-import {
-  recommander,
-  telephones,
-  pc,
-  tablettes,
-  accessoires,
-  montres,
-  ecouteurs,
-} from "~/utils/data";
-
-export default {
-  async asyncData({ params }) {
-    try {
-      const productId = params.id;
-      // Recherche dans tous les tableaux de produits
-      const allProducts = [
-        ...recommander,
-        ...telephones,
-        ...pc,
-        ...tablettes,
-        ...accessoires,
-        ...montres,
-        ...ecouteurs,
-      ];
-      const product = allProducts.find((p) => p.id === productId);
-
-      return { product };
-    } catch (error) {
-      return console.log("produit non trouver");
-    }
-  },
-  data() {
-    return {
-      product: null,
-
-      img: "true",
-      img_1: "false",
-      img_2: "false",
-      img_3: "false",
-    };
-  },
-  methods: {
-    ...mapActions(["addToCart"]),
-    retour() {
-      window.history.back();
-    },
-    img1() {
-      this.img = "true";
-
-      this.img_2 = "false";
-      this.img_3 = "false";
-    },
-    img2() {
-      this.img_2 = "true";
-
-      this.img = "false";
-      this.img_3 = "false";
-    },
-    img3() {
-      this.img_3 = "true";
-
-      this.img_1 = "false";
-      this.img_2 = "false";
-    },
-    beforeEnter(el) {
-      el.style.opacity = 0;
-    },
-    enter(el, done) {
-      el.offsetHeight; // trigger reflow
-      el.style.transition = 'opacity 0.5s ease-in-out';
-      el.style.opacity = 1;
-      done();
-    },
-    leave(el, done) {
-      el.style.transition = 'opacity 0.5s ease-in-out';
-      el.style.opacity = 0;
-      done();
-    }
-  
-  },
-};
-</script>
 
