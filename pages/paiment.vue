@@ -81,9 +81,9 @@
           </v-list-item>
         </v-list>
       </div>
+      <br> <br>
+      <v-btn large block color="primary">Confirmer l'achat</v-btn>
     </div>
-    <br> <br>
-    <v-btn large block color="primary">Confirmer l'achat</v-btn>
     <br> <br>
     <br> <br>
 
