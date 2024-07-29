@@ -58,7 +58,9 @@ export const telephones= [
     prix: '799',
     last_prix: '1023',
     quantity: 1,
-    url: 'https://lh3.googleusercontent.com/E2J7hG3ZRWpFOO0NBrkg1s6K1ZKYLwEuCK_lAO7LrPVH3C0eTbFCycYgqs4gr8caAr27S-PKLy2yLhIVGCy4byZ5wZ8kzQpnyQk=rw-e365-w1200'
+    url: 'https://lh3.googleusercontent.com/E2J7hG3ZRWpFOO0NBrkg1s6K1ZKYLwEuCK_lAO7LrPVH3C0eTbFCycYgqs4gr8caAr27S-PKLy2yLhIVGCy4byZ5wZ8kzQpnyQk=rw-e365-w1200',
+    url2: "/article/montre.webp",
+    url3: "/article/pexel.webp",
   },
   {
     id: uuidv4(),
