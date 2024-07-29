@@ -6,7 +6,8 @@ Vue.use(Vuex);
 const store = () => new Vuex.Store({
     state: {
         isCartOpen: false,
-        cart: []
+        cart: [],
+
     },
     mutations: {
         toggleCart(state) {

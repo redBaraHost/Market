@@ -74,7 +74,6 @@
     </v-btn>
 
     <br />
-    <v-spacer></v-spacer>
     <v-divider></v-divider>
     <br />
 
@@ -96,7 +95,6 @@
     </v-btn>
 
  
-    <br> <br> <br>
 </div>
 </template>
 
@@ -110,10 +108,10 @@
   left: 0%;
   top: 55px;
   width: 0%;
-  height: 100%;
+  height: 100vh;
   background-color: white;
   padding: 0px;
-  margin-bottom: 220px;
+  padding-bottom: 720px;
   transition: 0.3s;
   animation: ease-in-out;
 }
