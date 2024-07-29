@@ -15,11 +15,11 @@
         </v-row>
       </v-card-text>
       <v-card-actions>
-        <v-btn @click="handleAddToCart" color="primary">Ajouter au Panier</v-btn>
+        <v-btn color="primary">Ajouter au Panier</v-btn>
       </v-card-actions>
     </v-card>
-    <v-alert v-if="errorMessage" type="error" dismissible>
-      {{ errorMessage }}
+    <v-alert v-else type="error" dismissible>
+      non trouver !
     </v-alert>
   </v-container>
 </template>
@@ -36,35 +36,22 @@ export default {
       const allProducts = [...recommander, ...telephones, ...pc, ...tablettes, ...accessoires, ...montres, ...ecouteurs];
       const product = allProducts.find(p => p.id === productId);
       
-      if (!product) {
-        return { errorMessage: 'Produit non trouvé' };
-      }
+     
       return { product };
     } catch (error) {
-      return { errorMessage: 'Une erreur est survenue' };
+      return console.log('produit non trouver');
     }
   },
   data() {
     return {
-      product: null // Initialise product ici pour éviter les erreurs de réactivité
+      product: null, // Assurez-vous que `product` est bien défini ici
     };
   },
   methods: {
-    ...mapActions(['addToCart', 'setError']),
-    async handleAddToCart() {
-      if (this.product) {
-        try {
-          await this.addToCart(this.product);
-          this.$toast.success('Produit ajouté au panier !');
-        } catch (error) {
-          this.$toast.error('Erreur lors de l\'ajout au panier.');
-          this.setError('Erreur lors de l\'ajout au panier.'); // Stockage de l'erreur dans le store
-        }
-      }
-    }
+    ...mapActions(['addToCart']),
+    
   },
-  computed: {
-  }
+ 
 };
 </script>
 

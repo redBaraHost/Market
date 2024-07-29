@@ -7,6 +7,8 @@ const store = () => new Vuex.Store({
     state: {
         isCartOpen: false,
         cart: [],
+      
+
 
     },
     mutations: {
@@ -72,7 +74,8 @@ const store = () => new Vuex.Store({
         },
         cartItemCount(state) {
             return state.cart.reduce((total, item) => total + item.quantity, 0);
-        }
+        },
+       
     }
 });
 

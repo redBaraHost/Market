@@ -2,7 +2,9 @@
     <div class="slider">
       <div class="card" v-for="item in items" :key="item.name">
         <div class="img-box">
-          <img :src="item.url" width="150">
+          <router-link :to="'/details/'+ item.id">
+            <img :src="item.url" width="150">
+          </router-link>
         </div>
         <div class="info-box">
           <p><strong>{{ item.name }}</strong></p>
