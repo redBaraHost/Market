@@ -1,7 +1,6 @@
 <template>
   <div class="menu">
     <v-icon @click="close">mdi-close</v-icon>
-    <br />
 
     <v-btn @click="home" large confortable text class="box pa-5">
       <v-icon x-large color="#757575" class="ml-2 mr-4">mdi-home</v-icon>
