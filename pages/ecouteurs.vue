@@ -27,25 +27,26 @@
       <br />
   
       <v-card class="mx-auto pa-5 rounded-xl" elevation="0" v-for="item in items" :key="item.id">
-        <v-img
-          src="https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601"
-        ></v-img>
-  
-        <v-card-title class="font-weight-bold">{{item.name}}</v-card-title>
-  
-        <v-card-subtitle
-          >{{item.details}}</v-card-subtitle
-        >
-        <span class="body-text-2 text-decoration-line-through">{{item.last_prix}} £</span>
-        <span class="body-text-1 font-weight-bold">{{item.prix}} £</span>
-  
-        <br />
-        <br />
-        <v-card-actions>
-          <v-btn color="primary" @click="addToCart(item)">Ajouter</v-btn>
-        </v-card-actions>
-      </v-card>
-  
+      <router-link :to="'/details/'+ item.id">
+            <v-img :src="item.url" width="260px"></v-img>
+          </router-link> 
+
+      <v-card-title class="font-weight-bold">{{item.name}}</v-card-title>
+
+      <v-card-subtitle
+        >{{item.details}}</v-card-subtitle
+      >
+      <span class="body-text-2 text-decoration-line-through ml-3">{{item.last_prix}} £</span> <br>
+      
+      <span class="body-text-1 font-weight-bold ml-3">{{item.prix}} £</span>
+
+      <br />
+      <br />
+      <v-card-actions>
+        <v-btn color="primary" @click="addToCart(item)">Ajouter</v-btn>
+      </v-card-actions>
+    </v-card>
+
       <br> <br> <br>
   
       <v-card elevation="0" style="background-color: whitesmoke; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border-radius: 30px; height: 200px;">

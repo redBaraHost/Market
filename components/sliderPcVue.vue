@@ -4,7 +4,7 @@
         <div class="img-box">
           <router-link :to="'/details/'+ item.id">
             <img :src="item.url" width="150">
-          </router-link>
+          </router-link> 
         </div>
         <div class="info-box">
           <p><strong>{{ item.name }}</strong></p>

@@ -24,17 +24,18 @@
     <br />
 
     <v-card class="mx-auto pa-5 rounded-xl" elevation="0" v-for="item in items" :key="item.id">
-      <v-img
-        src="https://lh3.googleusercontent.com/9G5VkratxCGLyYy5NLfL2-AMs-BymXE4erYP3_N7LsGGWf439j2Htj1Vf80Dr94nn-Rf4c9k9xRuAMpd0RbYGvH0zgSbU4vqkso=rw-e365-nu-w601"
-      ></v-img>
+      <router-link :to="'/details/'+ item.id">
+            <v-img :src="item.url" width="260px"></v-img>
+          </router-link> 
 
       <v-card-title class="font-weight-bold">{{item.name}}</v-card-title>
 
       <v-card-subtitle
         >{{item.details}}</v-card-subtitle
       >
-      <span class="body-text-2 text-decoration-line-through">{{item.last_prix}} £</span>
-      <span class="body-text-1 font-weight-bold">{{item.prix}} £</span>
+      <span class="body-text-2 text-decoration-line-through ml-3">{{item.last_prix}} £</span> <br>
+      
+      <span class="body-text-1 font-weight-bold ml-3">{{item.prix}} £</span>
 
       <br />
       <br />
@@ -90,6 +91,10 @@ body {
 .v-card{
     background-color: rgba(0, 170, 255, 0.055);
     margin-bottom: 20px;
+}
+.v-card .v-img{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 </style>
