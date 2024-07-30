@@ -1,3 +1,4 @@
+// store/auth.js
 import firebase from '@/plugins/firebase';
 
 export const state = () => ({

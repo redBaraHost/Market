@@ -13,24 +13,25 @@
 
           <v-spacer></v-spacer>
 
-          <v-badge v-if="cartItemCount > 0" color="info" :content="cartItemCount" >
+          <v-badge
+            v-if="cartItemCount > 0"
+            color="info"
+            :content="cartItemCount"
+          >
             <v-icon @click="toggleCart">mdi-cart</v-icon>
           </v-badge>
 
           <v-spacer></v-spacer>
 
-          <v-avatar color="primary" size="30" v-if="state === 'true'">
-            <span
-              style="
-                color: white !important;
-                font-weight: bolder;
-                font-size: 0.8rem;
-              "
-              >P</span
-            >
-          </v-avatar>
+          <v-avatar
+           v-if="isAuthenticated"
+            size="32"
+            color="purple"
+            class="white--text font-weight-bold"
+            >f</v-avatar
+          >
 
-          <nuxt-link to="/connexion">
+          <nuxt-link v-else to="/connexion">
             <v-icon>mdi-account-circle</v-icon>
           </nuxt-link>
         </div>
@@ -70,20 +71,21 @@ export default {
     footerVue,
   },
   data() {
-    return {
-      state: "false",
-    };
+    return {};
   },
   computed: {
     ...mapGetters({
       isCartOpen: "isCartOpen",
       cartItemCount: "cartItemCount",
+      isAuthenticated: "auth/isAuthenticated", 
+
     }),
   },
   async mounted() {
     await this.loadCart();
   },
   methods: {
+
     menuO() {
       document.querySelector(".menu").style.width = "95%";
       document.querySelector(".menu").style.padding = "20px";
