@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <br />
-    <v-btn outlined color="warning">Se deconnecter</v-btn>
+    <v-btn @click="handleSignOut" outlined color="warning">Se deconnecter</v-btn>
     <br>
     <br>
 
@@ -47,6 +47,8 @@
   </div>
 </template>
 
+
+
 <style scoped>
 .wrapper {
   padding: 15px;
@@ -65,3 +67,26 @@
     margin-left: 10px;
 }
 </style>
+
+<script>
+import { mapActions } from "vuex";
+
+export default {
+  middleware: 'auth',
+  methods: {
+    ...mapActions({
+      signOut: 'auth/signOut', // Appelle l'action signOut du module auth
+    }),
+    async handleSignOut() {
+      try {
+        await this.signOut(); // Appelle l'action signOut
+        this.$router.push('/connexion'); // Redirige vers la page de login après déconnexion
+      } catch (error) {
+        console.error("Erreur lors de la déconnexion : ", error);
+        // Tu peux ajouter ici une gestion des erreurs si nécessaire
+      }
+    }
+  }
+};
+</script>
+

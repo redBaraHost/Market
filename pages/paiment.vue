@@ -46,22 +46,8 @@
         <v-icon>mdi-pencil-outline</v-icon>
 
         <div class="d-flex justify-space-between align-center">
-          <!-- SVG icons for payment methods -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-            <!-- SVG path here -->
-          </svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-            <!-- SVG path here -->
-          </svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <!-- SVG path here -->
-          </svg>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-            <!-- SVG path here -->
-          </svg>
+         
+          <span class="text-body-1 font-weight-bold">Ajouter un moyen de paiment</span>
         </div>
       </div>
       <br />
