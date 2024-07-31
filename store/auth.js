@@ -15,6 +15,18 @@ export const mutations = {
 };
 
 export const actions = {
+  initAuth({ commit }) {
+    return new Promise((resolve) => {
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          commit('SET_USER', user);
+        } else {
+          commit('CLEAR_USER');
+        }
+        resolve(user);
+      });
+    });
+  },
   async signUp({ commit }, { email, password }) {
     try {
       const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
