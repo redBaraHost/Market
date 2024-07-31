@@ -23,13 +23,14 @@
 
           <v-spacer></v-spacer>
 
+
           <v-avatar
+          @click="settings"
            v-if="isAuthenticated"
             size="25"
             color="purple"
             class="white--text font-weight-bold"
-            >f</v-avatar
-          >
+            >f</v-avatar>
 
           <nuxt-link v-else to="/connexion">
             <v-icon size="25">mdi-account-circle</v-icon>
@@ -106,6 +107,9 @@ export default {
       document.querySelector(".mdi-close-box-outline").style.display = "block";
       document.querySelector(".search").style.padding = "0px 20px 20px 20px";
     },
+    settings(){
+      this.$router.push('/settings')
+    }
   },
 };
 </script>
