@@ -62,7 +62,10 @@
             <v-spacer></v-spacer>
             <p class="total">{{ calculateTotal() }} £</p>
           </div>
-          <v-btn large block color="primary" absolute @click="next">Procéder au paiement</v-btn>
+
+          <v-divider></v-divider>
+
+          <v-btn large block color="primary" @click="next">Procéder au paiement</v-btn>
         </div>
       </div>
     </div>
@@ -170,7 +173,7 @@ export default {
 .bottom {
   background-color: white;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   z-index: 30;
   bottom: 0;
   left: 0;

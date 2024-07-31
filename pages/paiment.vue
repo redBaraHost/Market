@@ -7,12 +7,17 @@
       <h4 class="v-title">Paiment</h4>
       <v-spacer></v-spacer>
 
-      <v-avatar v-if="isAuthenticated" size="32" color="purple" class="white--text font-weight-bold">
+      <v-avatar
+        v-if="isAuthenticated"
+        size="32"
+        color="purple"
+        class="white--text font-weight-bold"
+      >
         f
       </v-avatar>
 
       <nuxt-link v-if="!isAuthenticated" to="/connexion">
-        <v-icon large>mdi-account-circle</v-icon>
+        <v-icon normal>mdi-account-circle</v-icon>
       </nuxt-link>
     </div>
     <br />
@@ -78,25 +83,25 @@
           </v-list-item>
         </v-list>
       </div>
-      <br>
-      <br>
+      <br />
+      <br />
       <v-btn large block color="primary">Confirmer l'achat</v-btn>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br />
+    <br />
+    <br />
+    <br />
 
     <v-footer class="bg-indigo-lighten-1 text-center d-flex flex-column">
       <div class="pt-0">
-        Engagement de Google Nest pour la protection de la vie privée Conditions de vente Conditions d'utilisation Caractéristiques environnementales des produits.
+        Engagement de Google Nest pour la protection de la vie privée Conditions
+        de vente Conditions d'utilisation Caractéristiques environnementales des
+        produits.
       </div>
 
       <v-divider></v-divider>
 
-      <div>
-        {{ new Date().getFullYear() }} — <strong>Privat's Labs</strong>
-      </div>
+      <div>{{ new Date().getFullYear() }} — <strong>Privat's Labs</strong></div>
     </v-footer>
   </div>
 </template>
@@ -105,9 +110,12 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  middleware: 'auth',
+  // middleware: 'auth',
   computed: {
-    ...mapGetters(["cartItems", "auth/isAuthenticated"]), // Assure-toi d'importer le getter isAuthenticated
+    ...mapGetters({
+      cartItems: "cartItems",
+      isAuthenticated: "auth/isAuthenticated",
+    }),
   },
   methods: {
     ...mapActions(["removeFromCart"]),
@@ -174,13 +182,12 @@ export default {
   z-index: 2;
   background-color: white;
 }
-.livraison-box .v-icon{
+.livraison-box .v-icon {
   position: absolute;
   top: -14px;
   left: 270px;
   z-index: 2;
   background-color: white;
-
 }
 .center .methode-box {
   position: relative;
@@ -198,13 +205,12 @@ export default {
   background-color: white;
 }
 
-.methode-box .v-icon{
+.methode-box .v-icon {
   position: absolute;
   top: -14px;
   left: 270px;
   z-index: 2;
   background-color: white;
-
 }
 .center .panier-box {
   position: relative;

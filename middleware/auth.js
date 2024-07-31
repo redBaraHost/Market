@@ -7,5 +7,6 @@ export default function ({ store, redirect }) {
   // Redirige vers la page de connexion si l'utilisateur n'est pas authentifié
   if (!isAuthenticated) {
     return redirect('/connexion');
+    
   }
 }

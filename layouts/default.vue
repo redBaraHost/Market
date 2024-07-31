@@ -25,14 +25,14 @@
 
           <v-avatar
            v-if="isAuthenticated"
-            size="32"
+            size="25"
             color="purple"
             class="white--text font-weight-bold"
             >f</v-avatar
           >
 
           <nuxt-link v-else to="/connexion">
-            <v-icon>mdi-account-circle</v-icon>
+            <v-icon size="25">mdi-account-circle</v-icon>
           </nuxt-link>
         </div>
       </v-toolbar>
