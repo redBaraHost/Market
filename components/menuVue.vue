@@ -72,13 +72,7 @@
     <v-divider></v-divider>
     <br />
 
-    <v-btn large confortable text class="box pa-5">
-      <v-icon>mdi-bag-checked</v-icon>
-      <span>Commandes</span>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-    </v-btn>
+   
     <v-btn large confortable text class="box pa-5">
       <v-icon>mdi-help-circle</v-icon>
       <span>Aide</span>
@@ -86,6 +80,9 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
     </v-btn>
+
+    <v-btn @click="handleSignOut" outlined color="warning" class="deco">Se déconnecter</v-btn>
+
   </div>
 </template>
 
@@ -118,6 +115,9 @@
   margin-left: auto;
   display: none;
 }
+.deco{
+  display: none;
+}
 
 .mdi-bag-checked,
 .mdi-help-circle {
@@ -138,6 +138,7 @@ export default {
     close() {
       document.querySelector(".menu").style.width = "0%";
       document.querySelector(".menu").style.padding = "0px";
+      document.querySelector(".deco").style.display="none";
       document.querySelector(".mdi-close").style.display = "none";
 
       const boxes = document.querySelectorAll(".box");
@@ -181,6 +182,19 @@ export default {
       this.closeCart();
     },
     ...mapActions(["closeCart"]),
+    ...mapActions({
+      signOut: "auth/signOut", // Appelle l'action signOut du module auth
+    }),
+    async handleSignOut() {
+      this.close();
+      try {
+        await this.signOut(); // Appelle l'action signOut
+        this.$router.push("/connexion"); // Redirige vers la page de login après déconnexion
+      } catch (error) {
+        console.error("Erreur lors de la déconnexion : ", error);
+        // Tu peux ajouter ici une gestion des erreurs si nécessaire
+      }
+    },
   },
 };
 </script>

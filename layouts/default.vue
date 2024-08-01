@@ -32,7 +32,9 @@
             class="white--text font-weight-bold"
             style="display: flex; align-items: center"
           >
-          <span style="text-transform: uppercase;">{{ userPrenom[0] || 'U' }}</span>
+            <span style="text-transform: uppercase">{{
+              userPrenom[0] || "U"
+            }}</span>
           </v-avatar>
 
           <nuxt-link v-else to="/connexion">
@@ -76,26 +78,27 @@ export default {
   },
   data() {
     return {
-      userPrenom: '',
-
+      userPrenom: "",
     };
   },
   async created() {
-      try {
-        const userProfile = await this.$store.dispatch('auth/fetchUserProfile');
-        this.userPrenom = userProfile.prenom || 'Nom non disponible';
-      } catch (error) {
-        console.error('Erreur lors de la récupération du profil utilisateur :', error);
-      }
-    },
+    try {
+      const userProfile = await this.$store.dispatch("auth/fetchUserProfile");
+      this.userPrenom = userProfile.prenom || "Nom non disponible";
+    } catch (error) {
+      console.error(
+        "Erreur lors de la récupération du profil utilisateur :",
+        error
+      );
+    }
+  },
   computed: {
     ...mapGetters({
       isCartOpen: "isCartOpen",
       cartItemCount: "cartItemCount",
       isAuthenticated: "auth/isAuthenticated",
-      user: "auth/getUser"
+      user: "auth/getUser",
     }),
-   
   },
   async mounted() {
     await this.loadCart();
@@ -105,6 +108,8 @@ export default {
       document.querySelector(".menu").style.width = "95%";
       document.querySelector(".menu").style.padding = "20px";
       document.querySelector(".mdi-close").style.display = "block";
+      document.querySelector(".deco").style.display="block";
+
 
       const boxes = document.querySelectorAll(".box");
       boxes.forEach((box) => {
@@ -115,15 +120,15 @@ export default {
       toggleCart: "toggleCart",
     }),
     ...mapActions(["loadCart"]),
-
+   
     search() {
       document.querySelector(".search").style.height = "97%";
       document.querySelector(".mdi-close-box-outline").style.display = "block";
       document.querySelector(".search").style.padding = "0px 20px 20px 20px";
     },
     settings() {
-      this.$router.push('/settings');
-    }
+      this.$router.push("/settings");
+    },
   },
 };
 </script>

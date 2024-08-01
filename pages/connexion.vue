@@ -161,6 +161,8 @@ export default {
           prenom: this.prenom,
         });
         this.$router.push('/');
+        this.$router.go(); // Rechargera la page actuelle
+
       } catch (error) {
         this.error = error.message;
       } finally {
@@ -179,6 +181,7 @@ export default {
           password: this.password,
         });
         this.$router.push('/');
+        this.$router.go(); // Rechargera la page actuelle
       } catch (error) {
         this.error = error.message;
       } finally {

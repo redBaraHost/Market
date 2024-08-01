@@ -31,10 +31,10 @@
         <p>LIVRAISON</p>
         <v-icon>mdi-pencil-outline</v-icon>
 
-        <span class="body-1 font-weight-bold">Nom complet</span> <br />
-        <span class="text-body-2">Adresse</span> <br />
-        <span class="text-body-2">ville, pays</span> <br />
-        <span class="text-body-2">Numero de mobile</span>
+        <span class="body-1 font-weight-bold">{{userPrenom}} {{ userNom }}</span> <br />
+        <span class="text-body-2">{{userAddress}}</span> <br />
+        <span class="text-body-2">{{userPhone}}</span> <br />
+        <span class="text-body-2">{{userEmail}}</span>
         <br />
         <br />
         <v-divider></v-divider>
@@ -103,7 +103,11 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {
-      userPrenom: "", // Assure-toi que cette variable est initialisée
+      userNom: "", 
+      userPrenom: "", 
+      userAddress: "", 
+      userPhone: "", 
+      userEmail: "", 
     };
   },
   computed: {
@@ -116,6 +120,10 @@ export default {
     try {
       const userProfile = await this.$store.dispatch("auth/fetchUserProfile");
       this.userPrenom = userProfile.prenom || "Nom non disponible";
+      this.userNom = userProfile.nom || "Nom non disponible";
+      this.userPhone = userProfile.phone || "Nom non disponible";
+      this.userEmail = userProfile.email || "Nom non disponible";
+      this.userAddress = userProfile.address || "Nom non disponible";
     } catch (error) {
       console.error(
         "Erreur lors de la récupération du profil utilisateur :",
