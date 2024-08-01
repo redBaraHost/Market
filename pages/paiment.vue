@@ -8,12 +8,16 @@
       <v-spacer></v-spacer>
 
       <v-avatar
+        @click="settings"
         v-if="isAuthenticated"
-        size="32"
+        size="25"
         color="purple"
         class="white--text font-weight-bold"
+        style="display: flex; align-items: center"
       >
-        f
+        <span style="text-transform: uppercase">
+          {{ (userPrenom && userPrenom[0]) || "U" }}
+        </span>
       </v-avatar>
 
       <nuxt-link v-if="!isAuthenticated" to="/connexion">
@@ -46,8 +50,9 @@
         <v-icon>mdi-pencil-outline</v-icon>
 
         <div class="d-flex justify-space-between align-center">
-         
-          <span class="text-body-1 font-weight-bold">Ajouter un moyen de paiment</span>
+          <span class="text-body-1 font-weight-bold">
+            Ajouter un moyen de paiment
+          </span>
         </div>
       </div>
       <br />
@@ -96,18 +101,39 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  // middleware: 'auth',
+  data() {
+    return {
+      userPrenom: "", // Assure-toi que cette variable est initialisée
+    };
+  },
   computed: {
     ...mapGetters({
       cartItems: "cartItems",
       isAuthenticated: "auth/isAuthenticated",
     }),
   },
+  async created() {
+    try {
+      const userProfile = await this.$store.dispatch("auth/fetchUserProfile");
+      this.userPrenom = userProfile.prenom || "Nom non disponible";
+    } catch (error) {
+      console.error(
+        "Erreur lors de la récupération du profil utilisateur :",
+        error
+      );
+    }
+  },
   methods: {
     ...mapActions(["removeFromCart"]),
+
+    settings() {
+      this.$router.push("/settings");
+    },
   },
 };
 </script>
+
+
 
 
 <style scoped>

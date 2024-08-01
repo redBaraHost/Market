@@ -126,7 +126,7 @@
 <script>
 export default {
   data: () => ({
-    etat: "",
+    etat: "co",
     nom: null,
     prenom: null,
     email: null,

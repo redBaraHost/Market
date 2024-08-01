@@ -108,9 +108,18 @@ export default {
         box.style.display = 'flex';
       });
     },
-    next(){
-      this.$router.push('/paiment')
+    async next() {
+    try {
+      
+      this.$router.push('/paiment');
+
+      await this.closeCart();
+      
+    } catch (error) {
+      console.error("Erreur lors de la fermeture du panier : ", error);
+      // Gestion des erreurs si nécessaire
     }
+  }
   
 
    
