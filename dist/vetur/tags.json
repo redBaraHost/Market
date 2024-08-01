@@ -1,0 +1,41 @@
+{
+  "Affiche1Vue": {
+    "description": "Auto imported from components/affiche1Vue.vue"
+  },
+  "Affiche2Vue": {
+    "description": "Auto imported from components/affiche2Vue.vue"
+  },
+  "Affiche3Vue": {
+    "description": "Auto imported from components/affiche3Vue.vue"
+  },
+  "Affiche4Vue": {
+    "description": "Auto imported from components/affiche4Vue.vue"
+  },
+  "Affiche5Vue": {
+    "description": "Auto imported from components/affiche5Vue.vue"
+  },
+  "FooterVue": {
+    "description": "Auto imported from components/footerVue.vue"
+  },
+  "MenuVue": {
+    "description": "Auto imported from components/menuVue.vue"
+  },
+  "PanierVue": {
+    "description": "Auto imported from components/panierVue.vue"
+  },
+  "SearchVue": {
+    "description": "Auto imported from components/searchVue.vue"
+  },
+  "SliderMontreVue": {
+    "description": "Auto imported from components/sliderMontreVue.vue"
+  },
+  "SliderPcVue": {
+    "description": "Auto imported from components/sliderPcVue.vue"
+  },
+  "SliderTelVue": {
+    "description": "Auto imported from components/sliderTelVue.vue"
+  },
+  "SliderVue": {
+    "description": "Auto imported from components/sliderVue.vue"
+  }
+}
