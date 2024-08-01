@@ -27,6 +27,16 @@ export const actions = {
       });
     });
   },
+  async fetchUserProfile({ commit }) {
+    const user = firebase.auth().currentUser;
+    if (user) {
+      const userDoc = await firebase.firestore().collection('users').doc(user.uid).get();
+      if (userDoc.exists) {
+        return userDoc.data();
+      }
+    }
+    return {};
+  },
   async signUp({ commit }, { email, password, address, phone, nom, prenom }) {
     try {
       const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);

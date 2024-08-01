@@ -23,14 +23,17 @@
 
           <v-spacer></v-spacer>
 
-
+          <!-- Avatar avec initiale du prénom utilisateur -->
           <v-avatar
-          @click="settings"
-           v-if="isAuthenticated"
+            @click="settings"
+            v-if="isAuthenticated"
             size="25"
             color="purple"
             class="white--text font-weight-bold"
-            >f</v-avatar>
+            style="display: flex; align-items: center"
+          >
+          <span style="text-transform: uppercase;">{{ userPrenom[0] || 'U' }}</span>
+          </v-avatar>
 
           <nuxt-link v-else to="/connexion">
             <v-icon size="25">mdi-account-circle</v-icon>
@@ -72,21 +75,32 @@ export default {
     footerVue,
   },
   data() {
-    return {};
+    return {
+      userPrenom: '',
+
+    };
   },
+  async created() {
+      try {
+        const userProfile = await this.$store.dispatch('auth/fetchUserProfile');
+        this.userPrenom = userProfile.prenom || 'Nom non disponible';
+      } catch (error) {
+        console.error('Erreur lors de la récupération du profil utilisateur :', error);
+      }
+    },
   computed: {
     ...mapGetters({
       isCartOpen: "isCartOpen",
       cartItemCount: "cartItemCount",
-      isAuthenticated: "auth/isAuthenticated", 
-
+      isAuthenticated: "auth/isAuthenticated",
+      user: "auth/getUser"
     }),
+   
   },
   async mounted() {
     await this.loadCart();
   },
   methods: {
-
     menuO() {
       document.querySelector(".menu").style.width = "95%";
       document.querySelector(".menu").style.padding = "20px";
@@ -107,8 +121,8 @@ export default {
       document.querySelector(".mdi-close-box-outline").style.display = "block";
       document.querySelector(".search").style.padding = "0px 20px 20px 20px";
     },
-    settings(){
-      this.$router.push('/settings')
+    settings() {
+      this.$router.push('/settings');
     }
   },
 };
