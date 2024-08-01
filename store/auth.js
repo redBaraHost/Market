@@ -27,10 +27,21 @@ export const actions = {
       });
     });
   },
-  async signUp({ commit }, { email, password }) {
+  async signUp({ commit }, { email, password, address, phone, nom, prenom }) {
     try {
       const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-      commit('SET_USER', userCredential.user);
+      const user = userCredential.user;
+
+      // Save additional user info in Firestore
+      await firebase.firestore().collection('users').doc(user.uid).set({
+        email,
+        address,
+        phone,
+        nom,
+        prenom,
+      });
+
+      commit('SET_USER', user);
     } catch (error) {
       throw new Error(error.message);
     }

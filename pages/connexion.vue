@@ -11,6 +11,31 @@
 
       <v-container>
         <v-form ref="form" v-model="valid">
+         
+          <v-text-field
+           v-if="etat !== 'co'"
+            v-model="nom"
+            color="#10a37f"
+            label="Nom"
+            type="text"
+            variant="underlined"
+            clearable
+            :rules="[v => !!v || 'Nom est requis']"
+            required
+          ></v-text-field>
+
+          <v-text-field
+           v-if="etat !== 'co'"
+            v-model="prenom"
+            color="#10a37f"
+            label="Prenom"
+            type="text"
+            variant="underlined"
+            clearable
+            :rules="[v => !!v || 'Prenom est requis']"
+            required
+          ></v-text-field>
+
           <v-text-field
             v-model="email"
             color="#10a37f"
@@ -32,6 +57,29 @@
             required
           ></v-text-field>
 
+          <v-text-field
+            v-model="address"
+            color="#10a37f"
+            label="Adresse"
+            variant="underlined"
+            clearable
+            :rules="[v => !!v || 'Adresse est requise']"
+            v-if="etat !== 'co'"
+            required
+          ></v-text-field>
+
+          <v-text-field
+            v-model="phone"
+            color="#10a37f"
+            label="Numéro de téléphone"
+            variant="underlined"
+            type="tel"
+            clearable
+            :rules="[v => !!v || 'Numéro de téléphone est requis']"
+            v-if="etat !== 'co'"
+            required
+          ></v-text-field>
+
           <v-checkbox
             v-model="terms"
             color="#10a37f"
@@ -49,7 +97,7 @@
         <v-spacer></v-spacer>
 
         <v-btn @click="signUp" :disabled="!valid" tonal comfortable block large color="#10a37f" v-if="etat !== 'co'">
-          <span style="color: white;">Suivant</span>
+          <span style="color: white;">S'inscrit</span>
           <v-icon icon="mdi-chevron-right" end></v-icon>
         </v-btn>
 
@@ -75,15 +123,16 @@
   </div>
 </template>
 
-
-
-
 <script>
 export default {
   data: () => ({
     etat: "",
+    nom: null,
+    prenom: null,
     email: null,
     password: null,
+    address: null,
+    phone: null,
     terms: false,
     loading: false,
     error: null,
@@ -91,11 +140,7 @@ export default {
   }),
   methods: {
     changeEtat() {
-      if (this.etat == "") {
-        this.etat = "co";
-      } else {
-        this.etat = "";
-      }
+      this.etat = this.etat === "" ? "co" : "";
     },
     retour() {
       window.history.back();
@@ -110,6 +155,10 @@ export default {
         await this.$store.dispatch('auth/signUp', {
           email: this.email,
           password: this.password,
+          address: this.address,
+          phone: this.phone,
+          nom: this.nom,
+          prenom: this.prenom,
         });
         this.$router.push('/');
       } catch (error) {
@@ -139,6 +188,7 @@ export default {
   },
 };
 </script>
+
 
 
 
