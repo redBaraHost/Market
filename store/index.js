@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import * as auth from './auth';  // Importer toutes les parties
+// import * as auth from './auth';  
 
 Vue.use(Vuex);
 
@@ -73,15 +73,15 @@ const store = () => new Vuex.Store({
       return state.cart.reduce((total, item) => total + (item.quantity || 1), 0);
     },
   },
-  modules: {
-    auth: {
-      namespaced: true,  // Assurez-vous que le module est correctement défini
-      state: auth.state,
-      mutations: auth.mutations,
-      actions: auth.actions,
-      getters: auth.getters,
-    },
-  },
+  // modules: {
+  //   auth: {
+  //     namespaced: true,  
+  //     state: auth.state,
+  //     mutations: auth.mutations,
+  //     actions: auth.actions,
+  //     getters: auth.getters,
+  //   },
+  //},
 });
 
 export default store;

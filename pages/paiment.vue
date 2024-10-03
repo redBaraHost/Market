@@ -1,13 +1,13 @@
 <template>
   <div class="wrapper">
     <div class="top">
-      <nuxt-link to="/">Market</nuxt-link>
+      <v-icon @click="retour">mdi-arrow-left</v-icon>
+<v-spacer></v-spacer>
+      <nuxt-link to="/">LafyShop</nuxt-link>
 
       <v-spacer></v-spacer>
-      <h4 class="v-title">Paiment</h4>
-      <v-spacer></v-spacer>
 
-      <v-avatar
+      <!-- <v-avatar
         @click="settings"
         v-if="isAuthenticated"
         size="25"
@@ -18,12 +18,14 @@
         <span style="text-transform: uppercase">
           {{ (userPrenom && userPrenom[0]) || "U" }}
         </span>
-      </v-avatar>
+      </v-avatar> -->
 
-      <nuxt-link v-if="!isAuthenticated" to="/connexion">
+      <!-- <nuxt-link v-if="!isAuthenticated" to="/connexion">
         <v-icon normal>mdi-account-circle</v-icon>
-      </nuxt-link>
+      </nuxt-link> -->
     </div>
+    <br />
+    <br />
     <br />
 
     <div class="center">
@@ -51,7 +53,7 @@
 
         <div class="d-flex justify-space-between align-center">
           <span class="text-body-1 font-weight-bold">
-            Ajouter un moyen de paiment
+            Paiemant a la livraison - mains a mains
           </span>
         </div>
       </div>
@@ -85,14 +87,16 @@
 
     <v-footer class="bg-indigo-lighten-1 text-center d-flex flex-column">
       <div class="pt-0">
-        Engagement de Google Nest pour la protection de la vie privée Conditions
+        Engagement de LafyShop inc pour la protection de la vie privée Conditions
         de vente Conditions d'utilisation Caractéristiques environnementales des
         produits.
       </div>
 
+      <br> <br>
+
       <v-divider></v-divider>
 
-      <div>{{ new Date().getFullYear() }} — <strong>Privat's Labs</strong></div>
+      <p>{{ new Date().getFullYear() }} — <strong>Privat's Labs</strong></p>
     </v-footer>
   </div>
 </template>
@@ -113,29 +117,32 @@ export default {
   computed: {
     ...mapGetters({
       cartItems: "cartItems",
-      isAuthenticated: "auth/isAuthenticated",
+      // isAuthenticated: "auth/isAuthenticated",
     }),
   },
-  async created() {
-    try {
-      const userProfile = await this.$store.dispatch("auth/fetchUserProfile");
-      this.userPrenom = userProfile.prenom || "Nom non disponible";
-      this.userNom = userProfile.nom || "Nom non disponible";
-      this.userPhone = userProfile.phone || "Nom non disponible";
-      this.userEmail = userProfile.email || "Nom non disponible";
-      this.userAddress = userProfile.address || "Nom non disponible";
-    } catch (error) {
-      console.error(
-        "Erreur lors de la récupération du profil utilisateur :",
-        error
-      );
-    }
-  },
+  // async created() {
+  //   try {
+  //     const userProfile = await this.$store.dispatch("auth/fetchUserProfile");
+  //     this.userPrenom = userProfile.prenom || "Nom non disponible";
+  //     this.userNom = userProfile.nom || "Nom non disponible";
+  //     this.userPhone = userProfile.phone || "Nom non disponible";
+  //     this.userEmail = userProfile.email || "Nom non disponible";
+  //     this.userAddress = userProfile.address || "Nom non disponible";
+  //   } catch (error) {
+  //     console.error(
+  //       "Erreur lors de la récupération du profil utilisateur :",
+  //       error
+  //     );
+  //   }
+  // },
   methods: {
     ...mapActions(["removeFromCart"]),
 
     settings() {
       this.$router.push("/settings");
+    },
+    retour() {
+      window.history.back();
     },
   },
 };
@@ -166,12 +173,19 @@ export default {
   align-items: center;
   justify-content: center;
   height: 50px;
-  padding: 0px;
+  padding: 15px;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+
 }
 
 .top a {
   color: #5da44c;
-  font-family: "Fugaz One", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 900;
   font-style: normal;
   text-decoration: none;

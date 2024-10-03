@@ -46,7 +46,7 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
     </v-btn>
-    <v-btn @click="tablettes" large confortable text class="box pa-5">
+    <!-- <v-btn @click="tablettes" large confortable text class="box pa-5">
       <img
         src="https://lh3.googleusercontent.com/YN24eOCoidong7T3E1foOb7nn6irWVnKprK7TdXKooClNrLKih6GLszuAurv36z4glpTLsWZOwFYFqRtIS4flbacfA3boUMvGY8=rw-e365-nu-w601"
         width="50"
@@ -55,9 +55,9 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
-    </v-btn>
+    </v-btn> -->
 
-    <v-btn @click="pc" large confortable text class="box pa-5">
+    <!-- <v-btn @click="pc" large confortable text class="box pa-5">
       <img
         src="https://lh3.googleusercontent.com/YN24eOCoidong7T3E1foOb7nn6irWVnKprK7TdXKooClNrLKih6GLszuAurv36z4glpTLsWZOwFYFqRtIS4flbacfA3boUMvGY8=rw-e365-nu-w601"
         width="50"
@@ -66,14 +66,14 @@
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
-    </v-btn>
+    </v-btn> -->
 
     <br />
-    <v-divider></v-divider>
+    <v-divider style="margin-top: auto; margin-bottom: 50px;"></v-divider>
     <br />
 
    
-    <v-btn large confortable text class="box pa-5">
+    <v-btn large confortable text class="box pa-5" style="margin-top: auto; margin-bottom: 50px;">
       <v-icon>mdi-help-circle</v-icon>
       <span>Aide</span>
       <v-spacer></v-spacer>
@@ -81,7 +81,7 @@
       <v-spacer></v-spacer>
     </v-btn>
 
-    <v-btn @click="handleSignOut" outlined color="warning" class="deco">Se déconnecter</v-btn>
+    <!-- <v-btn @click="handleSignOut" outlined color="warning" class="deco">Se déconnecter</v-btn> -->
 
   </div>
 </template>
@@ -138,7 +138,7 @@ export default {
     close() {
       document.querySelector(".menu").style.width = "0%";
       document.querySelector(".menu").style.padding = "0px";
-      document.querySelector(".deco").style.display="none";
+      // document.querySelector(".deco").style.display="none";
       document.querySelector(".mdi-close").style.display = "none";
 
       const boxes = document.querySelectorAll(".box");
@@ -185,16 +185,15 @@ export default {
     ...mapActions({
       signOut: "auth/signOut", // Appelle l'action signOut du module auth
     }),
-    async handleSignOut() {
-      this.close();
-      try {
-        await this.signOut(); // Appelle l'action signOut
-        this.$router.push("/connexion"); // Redirige vers la page de login après déconnexion
-      } catch (error) {
-        console.error("Erreur lors de la déconnexion : ", error);
-        // Tu peux ajouter ici une gestion des erreurs si nécessaire
-      }
-    },
+    // async handleSignOut() {
+    //   this.close();
+    //   try {
+    //     await this.signOut(); // Appelle l'action signOut
+    //     this.$router.push("/connexion"); // Redirige vers la page de login après déconnexion
+    //   } catch (error) {
+    //     console.error("Erreur lors de la déconnexion : ", error);
+    //   }
+    // },
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <footer>
     <v-divider></v-divider>
     <br> <br>
-    <v-toolbar-title>Market</v-toolbar-title>
+    <v-toolbar-title>LafyShop</v-toolbar-title>
 
     <br />
     <br />
@@ -21,6 +21,11 @@
     <br />
 
     <v-divider></v-divider>
+
+    <br />
+    <br />
+
+    <p style="text-align: center;">{{ new Date().getFullYear() }} — <strong>Privat's Labs</strong></p>
 
     <br />
     <br />
@@ -78,7 +83,7 @@ footer {
 
 .v-toolbar__title {
   color: #5da44c;
-  font-family: "Fugaz One", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 900;
   font-style: normal;
   text-decoration: none;

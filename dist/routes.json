@@ -2,78 +2,67 @@
   {
     "name": "accessoires",
     "path": "/accessoires",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\accessoires.vue",
-    "chunkName": "pages/accessoires",
-    "_name": "_117b22ca"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\accessoires.vue",
+    "chunkName": "pages/accessoires"
   },
   {
     "name": "connexion",
     "path": "/connexion",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\connexion.vue",
-    "chunkName": "pages/connexion",
-    "_name": "_59d19082"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\connexion.vue",
+    "chunkName": "pages/connexion"
   },
   {
     "name": "ecouteurs",
     "path": "/ecouteurs",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\ecouteurs.vue",
-    "chunkName": "pages/ecouteurs",
-    "_name": "_d032cacc"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\ecouteurs.vue",
+    "chunkName": "pages/ecouteurs"
   },
   {
     "name": "montres",
     "path": "/montres",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\montres.vue",
-    "chunkName": "pages/montres",
-    "_name": "_3090599e"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\montres.vue",
+    "chunkName": "pages/montres"
   },
   {
     "name": "paiment",
     "path": "/paiment",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\paiment.vue",
-    "chunkName": "pages/paiment",
-    "_name": "_24c7ed22"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\paiment.vue",
+    "chunkName": "pages/paiment"
   },
   {
     "name": "pc",
     "path": "/pc",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\pc.vue",
-    "chunkName": "pages/pc",
-    "_name": "_641642ec"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\pc.vue",
+    "chunkName": "pages/pc"
   },
   {
     "name": "settings",
     "path": "/settings",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\settings.vue",
-    "chunkName": "pages/settings",
-    "_name": "_4a95197a"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\settings.vue",
+    "chunkName": "pages/settings"
   },
   {
     "name": "tablettes",
     "path": "/tablettes",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\tablettes.vue",
-    "chunkName": "pages/tablettes",
-    "_name": "_77188835"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\tablettes.vue",
+    "chunkName": "pages/tablettes"
   },
   {
     "name": "telephones",
     "path": "/telephones",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\telephones.vue",
-    "chunkName": "pages/telephones",
-    "_name": "_a5be5ef4"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\telephones.vue",
+    "chunkName": "pages/telephones"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_51b7a2ea"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
   },
   {
     "name": "details-id",
     "path": "/details/:id?",
-    "component": "C:\\\\Users\\\\duran\\\\Desktop\\\\Market\\\\pages\\\\details\\\\_id.vue",
-    "chunkName": "pages/details/_id",
-    "_name": "_40a9708f"
+    "component": "C:\\\\Users\\\\Durand\\\\Desktop\\\\market\\\\pages\\\\details\\\\_id.vue",
+    "chunkName": "pages/details/_id"
   }
 ]

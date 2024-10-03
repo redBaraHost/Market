@@ -4,17 +4,17 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _117b22ca = () => interopDefault(import('..\\pages\\accessoires.vue' /* webpackChunkName: "pages/accessoires" */))
-const _59d19082 = () => interopDefault(import('..\\pages\\connexion.vue' /* webpackChunkName: "pages/connexion" */))
-const _d032cacc = () => interopDefault(import('..\\pages\\ecouteurs.vue' /* webpackChunkName: "pages/ecouteurs" */))
-const _3090599e = () => interopDefault(import('..\\pages\\montres.vue' /* webpackChunkName: "pages/montres" */))
-const _24c7ed22 = () => interopDefault(import('..\\pages\\paiment.vue' /* webpackChunkName: "pages/paiment" */))
-const _641642ec = () => interopDefault(import('..\\pages\\pc.vue' /* webpackChunkName: "pages/pc" */))
-const _4a95197a = () => interopDefault(import('..\\pages\\settings.vue' /* webpackChunkName: "pages/settings" */))
-const _77188835 = () => interopDefault(import('..\\pages\\tablettes.vue' /* webpackChunkName: "pages/tablettes" */))
-const _a5be5ef4 = () => interopDefault(import('..\\pages\\telephones.vue' /* webpackChunkName: "pages/telephones" */))
-const _51b7a2ea = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
-const _40a9708f = () => interopDefault(import('..\\pages\\details\\_id.vue' /* webpackChunkName: "pages/details/_id" */))
+const _255c6f7d = () => interopDefault(import('..\\pages\\accessoires.vue' /* webpackChunkName: "pages/accessoires" */))
+const _b24b3c38 = () => interopDefault(import('..\\pages\\connexion.vue' /* webpackChunkName: "pages/connexion" */))
+const _36212808 = () => interopDefault(import('..\\pages\\ecouteurs.vue' /* webpackChunkName: "pages/ecouteurs" */))
+const _0a299513 = () => interopDefault(import('..\\pages\\montres.vue' /* webpackChunkName: "pages/montres" */))
+const _100dcb51 = () => interopDefault(import('..\\pages\\paiment.vue' /* webpackChunkName: "pages/paiment" */))
+const _0545f768 = () => interopDefault(import('..\\pages\\pc.vue' /* webpackChunkName: "pages/pc" */))
+const _765b93d8 = () => interopDefault(import('..\\pages\\settings.vue' /* webpackChunkName: "pages/settings" */))
+const _77bd4cd2 = () => interopDefault(import('..\\pages\\tablettes.vue' /* webpackChunkName: "pages/tablettes" */))
+const _01322b64 = () => interopDefault(import('..\\pages\\telephones.vue' /* webpackChunkName: "pages/telephones" */))
+const _1d8100ed = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _5460e826 = () => interopDefault(import('..\\pages\\details\\_id.vue' /* webpackChunkName: "pages/details/_id" */))
 
 const emptyFn = () => {}
 
@@ -29,47 +29,47 @@ export const routerOptions = {
 
   routes: [{
     path: "/accessoires",
-    component: _117b22ca,
+    component: _255c6f7d,
     name: "accessoires"
   }, {
     path: "/connexion",
-    component: _59d19082,
+    component: _b24b3c38,
     name: "connexion"
   }, {
     path: "/ecouteurs",
-    component: _d032cacc,
+    component: _36212808,
     name: "ecouteurs"
   }, {
     path: "/montres",
-    component: _3090599e,
+    component: _0a299513,
     name: "montres"
   }, {
     path: "/paiment",
-    component: _24c7ed22,
+    component: _100dcb51,
     name: "paiment"
   }, {
     path: "/pc",
-    component: _641642ec,
+    component: _0545f768,
     name: "pc"
   }, {
     path: "/settings",
-    component: _4a95197a,
+    component: _765b93d8,
     name: "settings"
   }, {
     path: "/tablettes",
-    component: _77188835,
+    component: _77bd4cd2,
     name: "tablettes"
   }, {
     path: "/telephones",
-    component: _a5be5ef4,
+    component: _01322b64,
     name: "telephones"
   }, {
     path: "/",
-    component: _51b7a2ea,
+    component: _1d8100ed,
     name: "index"
   }, {
     path: "/details/:id?",
-    component: _40a9708f,
+    component: _5460e826,
     name: "details-id"
   }],
 

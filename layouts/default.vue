@@ -4,14 +4,16 @@
       <v-toolbar class="p-5" elevation="0">
         <v-app-bar-nav-icon @click="menuO"></v-app-bar-nav-icon>
 
-        <v-toolbar-title><nuxt-link to="/">Market</nuxt-link></v-toolbar-title>
+        <v-toolbar-title><nuxt-link to="/">LafyShop</nuxt-link></v-toolbar-title>
 
+        <v-spacer></v-spacer>
         <v-spacer></v-spacer>
 
         <div class="d-flex left">
+          <v-spacer></v-spacer>
           <v-icon @click="search">mdi-magnify</v-icon>
 
-          <v-spacer></v-spacer>
+          <v-spacer v-if="cartItemCount > 0"></v-spacer>
 
           <v-badge
             v-if="cartItemCount > 0"
@@ -21,10 +23,9 @@
             <v-icon @click="toggleCart">mdi-cart</v-icon>
           </v-badge>
 
-          <v-spacer></v-spacer>
 
           <!-- Avatar avec initiale du prénom utilisateur -->
-          <v-avatar
+          <!-- <v-avatar
             @click="settings"
             v-if="isAuthenticated"
             size="25"
@@ -35,11 +36,11 @@
             <span style="text-transform: uppercase">{{
               userPrenom[0] || "U"
             }}</span>
-          </v-avatar>
+          </v-avatar> -->
 
-          <nuxt-link v-else to="/connexion">
+          <!-- <nuxt-link v-else to="/connexion">
             <v-icon size="25">mdi-account-circle</v-icon>
-          </nuxt-link>
+          </nuxt-link> -->
         </div>
       </v-toolbar>
     </div>
@@ -81,23 +82,23 @@ export default {
       userPrenom: "",
     };
   },
-  async created() {
-    try {
-      const userProfile = await this.$store.dispatch("auth/fetchUserProfile");
-      this.userPrenom = userProfile.prenom || "Nom non disponible";
-    } catch (error) {
-      console.error(
-        "Erreur lors de la récupération du profil utilisateur :",
-        error
-      );
-    }
-  },
+  // async created() {
+  //   try {
+  //     const userProfile = await this.$store.dispatch("auth/fetchUserProfile");
+  //     this.userPrenom = userProfile.prenom || "Nom non disponible";
+  //   } catch (error) {
+  //     console.error(
+  //       "Erreur lors de la récupération du profil utilisateur :",
+  //       error
+  //     );
+  //   }
+  // },
   computed: {
     ...mapGetters({
       isCartOpen: "isCartOpen",
       cartItemCount: "cartItemCount",
-      isAuthenticated: "auth/isAuthenticated",
-      user: "auth/getUser",
+      // isAuthenticated: "auth/isAuthenticated",
+      // user: "auth/getUser",
     }),
   },
   async mounted() {
@@ -108,7 +109,7 @@ export default {
       document.querySelector(".menu").style.width = "95%";
       document.querySelector(".menu").style.padding = "20px";
       document.querySelector(".mdi-close").style.display = "block";
-      document.querySelector(".deco").style.display="block";
+      // document.querySelector(".deco").style.display="block";
 
 
       const boxes = document.querySelectorAll(".box");
@@ -158,11 +159,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  background-color: white;
+
 }
 
 .v-toolbar__title a {
   color: #5da44c;
-  font-family: "Fugaz One", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 900;
   font-style: normal;
   text-decoration: none;

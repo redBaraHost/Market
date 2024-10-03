@@ -58,29 +58,29 @@
         userEmail: ''
       };
     },
-    async created() {
-      try {
-        const userProfile = await this.$store.dispatch('auth/fetchUserProfile');
-        this.userName = userProfile.nom || 'Nom non disponible';
-        this.userPrenom = userProfile.prenom || 'Nom non disponible';
-        this.userEmail = userProfile.email || 'Email non disponible';
-      } catch (error) {
-        console.error('Erreur lors de la récupération du profil utilisateur :', error);
-      }
-    },
+    // async created() {
+    //   try {
+    //     const userProfile = await this.$store.dispatch('auth/fetchUserProfile');
+    //     this.userName = userProfile.nom || 'Nom non disponible';
+    //     this.userPrenom = userProfile.prenom || 'Nom non disponible';
+    //     this.userEmail = userProfile.email || 'Email non disponible';
+    //   } catch (error) {
+    //     console.error('Erreur lors de la récupération du profil utilisateur :', error);
+    //   }
+    // },
     methods: {
-      ...mapActions({
-        signOut: 'auth/signOut', // Appelle l'action signOut du module auth
-      }),
-      async handleSignOut() {
-        try {
-          await this.signOut(); // Appelle l'action signOut
-          this.$router.push('/connexion'); // Redirige vers la page de login après déconnexion
-        } catch (error) {
-          console.error("Erreur lors de la déconnexion : ", error);
-          // Tu peux ajouter ici une gestion des erreurs si nécessaire
-        }
-      }
+      // ...mapActions({
+      //   signOut: 'auth/signOut', 
+      // }),
+      // async handleSignOut() {
+      //   try {
+      //     await this.signOut(); // Appelle l'action signOut
+      //     this.$router.push('/connexion'); // Redirige vers la page de login après déconnexion
+      //   } catch (error) {
+      //     console.error("Erreur lors de la déconnexion : ", error);
+      //     // Tu peux ajouter ici une gestion des erreurs si nécessaire
+      //   }
+      // }
     }
   };
   </script>
